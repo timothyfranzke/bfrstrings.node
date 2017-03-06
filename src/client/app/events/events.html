@@ -1,0 +1,6 @@
+<div ng-repeat="event in events" ng-if="!event.isActive" class="locationRight">
+    <h2>{{event.name}}</h2>
+    <h2>{{event.date | date:"MMM dd 'at' h:mma"}}</h2>
+    <img class="md-i" src="{{event.photo}}" alt="{{event.name}}"/>
+    <h3>{{event.description}}</h3>
+</div>

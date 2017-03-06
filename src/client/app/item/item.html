@@ -1,0 +1,33 @@
+<div layout-gt-md="row" layout="column" layout-align="center">
+    <div ng-hide="$mdMedia('gt-md')" layout="row" layout-align="center" flex="100">
+        <h1>{{item.name}} </h1>
+    </div>
+    <div ap-fotorama="options" ng-model="images" layout="row" layout-align="center" layout-padding/>
+    <div layout="column" layout-padding layout-margin flex-gt-md="65" flex="100">
+        <div ng-show="$mdMedia('gt-md')" layout="row" layout-align="center">
+            <h2>{{item.name}} </h2>
+        </div>
+        <p data-ng-bind-html="description">{{description}}</p>
+        <div class="price">${{item.price}}</div>
+        <div layout="row" layout-margin layout-padding layout-align="center">
+            <md-button ng-click="goInventory()">
+                <md-icon class="material-icons">chevron_left</md-icon>Back to Inventory
+            </md-button>
+            <md-button ng-click="openInquire(item)">
+                Inquire
+            </md-button>
+        </div>
+    </div>
+    <md-divider></md-divider>
+    <div layout="column" layout-padding ng-if="$mdMedia('gt-md')">
+        <h2>Recently Viewed</h2>
+        <div class="recentItem" ng-repeat="rvItem in recentlyViewed">
+            <div class="recentThumb">
+                <img ng-src="img/inventory/{{rvItem.id}}/1.png"/>
+            </div>
+            <h3>{{rvItem.name}}</h3>
+            <a href="#/inventory/{{rvItem.id}}">View Again</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
