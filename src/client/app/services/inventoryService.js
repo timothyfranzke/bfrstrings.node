@@ -6,7 +6,7 @@ bfApp.factory('inventoryService', function ($http, $q, $sce, inventoryModel) {
             var time = new Date();
             var defer = $q.defer();
             var request = {
-                url: 'php/InventoryService.php?type=all&ts=' + time.getTime(),
+                url: 'api/inventory',
                 //url: 'inventory/banjos.json',
                 method: 'GET'
             };
@@ -17,17 +17,16 @@ bfApp.factory('inventoryService', function ($http, $q, $sce, inventoryModel) {
             else {
                 console.log("http inventory");
                 $http(request)
-                    .success(function (data) {
+                    .then(function (data) {
                         data.forEach(function(item){
                             item.trimmedDescription = "";
                             item.trimmedDescription = $sce.trustAsHtml(item.description);
                         });
                         inventory = data;
                         defer.resolve(inventory);
+                    }, function(response){
+                        defer.reject(response);
                     })
-                    .error(function (data, status) {
-                        defer.reject(data);
-                    });
             }
             return defer.promise;
         },
@@ -36,31 +35,15 @@ bfApp.factory('inventoryService', function ($http, $q, $sce, inventoryModel) {
             var defer = $q.defer();
             var item = {};
             var request = {
-                url: 'php/InventoryService.php?id=' + id + '&ts=' + time.getTime(),
+                url: 'api/inventory/' + id,
                 method: 'GET'
             };
             $http(request)
-                .success(function (data) {
-                    if (data[0].active == "1") {
-                        data[0].active = true;
-                    }
-                    else {
-                        data[0].active = false;
-                    }
-                    if (data[0].sold == "1") {
-                        data[0].sold = true;
-                    }
-                    else {
-                        data[0].sold = false;
-                    }
-                    //sdata.trimmedDescription = "";
-                    //data.trimmedDescription = $sce.trustAsHtml(data.description);
+                .then(function (data) {
                     data[0].trusted = $sce.trustAsHtml(data[0].description);
-                    console.log("InventoryService: getItemById : Success: " + JSON.stringify(data));
                     defer.resolve(data[0]);
-                })
-                .error(function (data, status) {
-                    defer.resolve(data[0]);
+                }, function(response){
+                    defer.reject(response);
                 });
             return defer.promise;
         },
@@ -76,23 +59,22 @@ bfApp.factory('inventoryService', function ($http, $q, $sce, inventoryModel) {
             var defer = $q.defer();
             //var item = {};
             var request = {
-                url: 'php/InventoryService.php',
-                method: 'POST',
+                url: 'api/inventory',
+                method: 'PUT',
                 data: JSON.stringify(item),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             };
             $http(request)
-                .success(function (data) {
+                .then(function (data) {
                     if (data.length > 0) {
                         item.id = data;
                         all.push(item);
                     }
                     defer.resolve(data);
-                })
-                .error(function (data, status) {
-                    defer.reject(data);
+                }, function(response){
+                    defer.reject(response);
                 });
             return defer.promise;
         },

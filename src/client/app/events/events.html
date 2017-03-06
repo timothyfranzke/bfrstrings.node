@@ -1,6 +1,22 @@
-<div ng-repeat="event in events" ng-if="!event.isActive" class="locationRight">
-    <h2>{{event.name}}</h2>
-    <h2>{{event.date | date:"MMM dd 'at' h:mma"}}</h2>
-    <img class="md-i" src="{{event.photo}}" alt="{{event.name}}"/>
-    <h3>{{event.description}}</h3>
-</div>
+<md-card layout-gt-sm="row" layout="column" ng-repeat="event in events" class="md-disabled">
+    <div ng-hide="$mdMedia('gt-sm')" layout-padding>
+        <span class="md-headline">{{event.name}}</span>
+        <span class="md-subheader">{{event.startDate | date:"MMM dd 'at' h:mma"}}</span>
+    </div>
+    <div layout="row">
+        <div flex-gt-sm="10" flex="40" layout-padding >
+            <img src="{{event.url}}" alt="{{event.name}}"/>
+        </div>
+        <div layout="column" flex-gt-md="70" flex="50">
+            <div ng-hide="!$mdMedia('gt-sm')">
+                <span class="md-headline">{{event.name}}</span>
+                <span class="md-subheader">{{event.startDate | date:"MMM dd 'at' h:mma"}}</span>
+            </div>
+            <md-card-content>
+                {{event.description}}
+            </md-card-content>
+        </div>
+    </div>
+
+
+</md-card>

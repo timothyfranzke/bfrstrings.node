@@ -7,13 +7,11 @@ bfApp.factory('baseService', function($http, $q){
     var MakeRequest = function (request) {
         var defer = $q.defer();
         $http(request)
-            .success(function (data) {
+            .then(function (data) {
                 defer.resolve(data);
-            })
-            .error(function (data, status) {
-                defer.reject(data);
+            }, function(response){
+                defer.reject(response);
             });
-
         return defer.promise;
     };
     return {

@@ -6,7 +6,21 @@ bfApp.controller('inventoryController', function($scope, inventoryService, instr
     $scope.$mdMedia = $mdMedia;
     $scope.items = inventoryModel.inventory;
     console.log($scope.items);
-
+    if (inventoryModel.length == 0)
+    {
+        inventoryService.getInventory().then(function(data){
+            data.forEach(function(item){
+                item.visible = true;
+                if(item.name.toLowerCase().indexOf(' sold') > -1){
+                    item.sold = true;
+                }
+                else{
+                    item.sold = false;
+                }
+            });
+            inventoryModel.inventory = data;
+        });
+    }
 
     var filterInventory = function(index){
         $scope.items.forEach(function(item){

@@ -1,8 +1,8 @@
 bfApp.factory('eventService', function($http, $q, baseService){
     return {
         getEvents: function(){
-            var url = 'php/Events.php';
-            var query = "?";
+            var url = 'api/events';
+            var query = "";
             return baseService.GET(url, query);
         },
         getAccessToken: function(){
@@ -15,4 +15,4 @@ bfApp.factory('eventService', function($http, $q, baseService){
             return baseService.GET(url, query);
         }
     }
-})
+});

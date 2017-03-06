@@ -1,14 +1,62 @@
+<div layout="column" layout-gt-md="row" layout-padding>
+    <md-card flex-xs flex-gt-xs="70">
+        <span layout="row" layout-align="center" class="md-headline">{{item.name}}</span>
+        <md-card-content layout-gt-md="row" layout="column" >
+            <div layout="row" layout-align="center" style="margin-bottom: 100px">
+                <md-card-media  class="md-media-xl card-media" layout-padding layout-align="center">
+                    <div ap-fotorama="options" ng-model="images" />
+                </md-card-media>
+                <span style="height:50px"></span>
+            </div>
+
+            <div layout="column">
+                <p class="md-subheader-content" data-ng-bind-html="description">
+                    {{description}}
+                </p>
+                <span class="price">{{item.price | currency}}</span>
+            </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="goInventory()">
+                <md-icon class="material-icons">chevron_left</md-icon>Back to Inventory
+            </md-button>
+            <md-button ng-click="openInquire(item)">
+                Inquire
+            </md-button>
+        </md-card-actions>
+    </md-card>
+<div layout="column" layout-padding ng-if="$mdMedia('gt-md')" flex="30">
+    <span class="md-subheader">Recently Viewed</span>
+        <md-card ng-repeat="rvItem in recentlyViewed">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{rvItem.name}} </span>
+                    <span class="md-subhead">{{rvItem.price | currency}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media">
+                        <img ng-src="img/inventory/{{rvItem.id}}/1.png"/>
+                    </div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button href="#/inventory/{{rvItem.id}}">View</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
+<!--
 <div layout-gt-md="row" layout="column" layout-align="center">
     <div ng-hide="$mdMedia('gt-md')" layout="row" layout-align="center" flex="100">
-        <h1>{{item.name}} </h1>
+        <span span class="md-headline">{{item.name}} </span>
     </div>
-    <div ap-fotorama="options" ng-model="images" layout="row" layout-align="center" layout-padding/>
+
     <div layout="column" layout-padding layout-margin flex-gt-md="65" flex="100">
         <div ng-show="$mdMedia('gt-md')" layout="row" layout-align="center">
-            <h2>{{item.name}} </h2>
+            <span class="md-headline">{{item.name}} </span>
         </div>
         <p data-ng-bind-html="description">{{description}}</p>
-        <div class="price">${{item.price}}</div>
+        <div class="price">{{item.price | currency}}</div>
         <div layout="row" layout-margin layout-padding layout-align="center">
             <md-button ng-click="goInventory()">
                 <md-icon class="material-icons">chevron_left</md-icon>Back to Inventory
@@ -20,14 +68,24 @@
     </div>
     <md-divider></md-divider>
     <div layout="column" layout-padding ng-if="$mdMedia('gt-md')">
-        <h2>Recently Viewed</h2>
+        <span class="md-subheader">Recently Viewed</span>
         <div class="recentItem" ng-repeat="rvItem in recentlyViewed">
-            <div class="recentThumb">
-                <img ng-src="img/inventory/{{rvItem.id}}/1.png"/>
-            </div>
-            <h3>{{rvItem.name}}</h3>
-            <a href="#/inventory/{{rvItem.id}}">View Again</a>
-            <div class="clear"></div>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{rvItem.name}} </span>
+                        <span class="md-subhead">${{rvItem.price | currency}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                            <img ng-src="img/inventory/{{rvItem.id}}/1.png"/>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button href="#/inventory/{{rvItem.id}}">View</md-button>
+                </md-card-actions>
+            </md-card>
         </div>
     </div>
-</div>
+</div>-->

@@ -16,6 +16,7 @@ app.use("/app", express.static(__dirname + '/public/app'));
 app.use("/img", express.static(__dirname + '/public/img'));
 app.use("/js", express.static(__dirname + '/public/js'));
 app.use("/lib", express.static(__dirname + '/public/lib'));
+app.use("/configuration", express.static(__dirname + '/public/configuration' ));
 
 mongoClient.connect('mongodb://localhost:27017/bfstrings', function(err, database){
     if (err) return console.log(err);
@@ -39,6 +40,14 @@ app.get('/:uid', function(req,res){
 app.get('/api/cards/:id', function(req,res){
     var id = mongo.ObjectID(req.params.id);
     db.collection('cards').find( {"_id" : id}).toArray(function(err,result){
+        if (err) return console.log(err);
+
+        res.json(result);
+    })
+});
+
+app.get('/api/events', function(req,res){
+    db.collection('events').find({"active":true}).toArray(function(err,result){
         if (err) return console.log(err);
 
         res.json(result);

@@ -1,0 +1,17 @@
+<md-card layout="column" >
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{config.header}}</span>
+        </md-card-title-text>
+    </md-card-title>
+    <div layout-gt-md="row" layout="column">
+        <div flex-gt-md="50" flex layout-padding>
+            <img ng-src="configuration/ourBrand/img/{{config.image}}"/>
+        </div>
+        <div layout="column">
+            <md-card-content>
+                <p ng-repeat="line in config.text">{{line}}</p>
+            </md-card-content>
+        </div>
+    </div>
+</md-card>

@@ -61,6 +61,17 @@ gulp.task('img', function(){
 
 });
 
+gulp.task('config', function(){
+    gulp.src(['src/client/configuration/**/*.json'])
+        .pipe(gulp.dest('dist/public/configuration'));
+
+});
+
+gulp.task('css', function(){
+    gulp.src(['src/client/css/*'])
+        .pipe(gulp.dest('dist/public/css'))
+});
+
 gulp.task('full-clean', function(){
     gulp.src('dist')
         .pipe(plugins.clean())
@@ -105,7 +116,7 @@ gulp.task('app', function(){
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('build', ['clean', 'html', 'modules', 'webserver', 'server', 'app', 'lib', 'img'], function(){
+gulp.task('build', ['clean', 'html', 'modules', 'webserver', 'server', 'app', 'lib', 'css', 'img', 'config'], function(){
     console.log("building")
 });
 
