@@ -4,13 +4,18 @@ var fileUpload = require('express-fileupload');
 var mongo = require('mongodb');
 var fs = require('fs');
 var im = require('imagemagick');
-var sharp = require('sharp');
+//var sharp = require('sharp');
 var mongoClient = mongo.MongoClient;
 var app = express();
 var db;
 
 app.use(bodyparser.json());
 app.use(fileUpload());
+app.use("/css", express.static(__dirname + '/public/css'));
+app.use("/app", express.static(__dirname + '/public/app'));
+app.use("/img", express.static(__dirname + '/public/img'));
+app.use("/js", express.static(__dirname + '/public/js'));
+app.use("/lib", express.static(__dirname + '/public/lib'));
 
 mongoClient.connect('mongodb://localhost:27017/bfstrings', function(err, database){
     if (err) return console.log(err);
@@ -24,7 +29,7 @@ mongoClient.connect('mongodb://localhost:27017/bfstrings', function(err, databas
 
 
 app.get('/', function(req,res){
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/client/')
 });
 
 app.get('/:uid', function(req,res){
@@ -56,7 +61,7 @@ app.post('/api/cards', function(req,res){
     })
 });
 
-app.post('/api/cards/:id/image', function(req, res){
+/*app.post('/api/cards/:id/image', function(req, res){
     var id = mongo.ObjectID(req.params.id);
     var image_type = req.files.image.name.split('.')[1];
     console.log(req.files);
@@ -90,7 +95,7 @@ app.post('/api/cards/:id/image', function(req, res){
             })
         })
     })
-});
+});*/
 
 app.put('/api/cards/:id', function(req, res){
     var id = mongo.ObjectID(req.params.id);
@@ -155,7 +160,7 @@ app.delete('/api/inventory/:id', function(req, res){
     })
 });
 
-app.post('/api/inventory/:id/image', function(req, res){
+/*app.post('/api/inventory/:id/image', function(req, res){
     var id = mongo.ObjectID(req.params.id);
     var image_type = req.files.image.name.split('.')[1];
     console.log(req.files);
@@ -189,7 +194,7 @@ app.post('/api/inventory/:id/image', function(req, res){
             })
         })
     })
-});
+});*/
 
 
 

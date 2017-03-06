@@ -1,0 +1,1 @@
+var numberOfImages = 4;

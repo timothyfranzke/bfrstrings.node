@@ -10,41 +10,41 @@ bfApp.config(function($urlRouterProvider, $stateProvider, $locationProvider){
         })
         .state('home', {
             url: '/',
-            templateUrl: 'app/pages/home/home.html',
+            templateUrl: 'app/home/home.html',
             controller:'homeController'
         })
         .state('about', {
             url:'/about',
-            templateUrl:'app/pages/about/about.html'
+            templateUrl:'app/about/about.html'
         })
         .state('contact', {
             url:'/contact',
-            templateUrl:'app/pages/contact/contact.html',
+            templateUrl:'app/contact/contact.html',
             controller:'contactController'
         })
         .state('events', {
             url: '/events',
-            templateUrl: 'app/pages/events/events.html',
+            templateUrl: 'app/events/events.html',
             controller: 'eventsController'
         })
         .state('repairShop', {
             url: '/repairShop',
-            templateUrl: 'app/pages/repairShop/repairShop.html',
+            templateUrl: 'app/repairShop/repairShop.html',
             controller: 'repairShopController'
         })
         .state('ourBrand', {
             url: '/ourBrand',
-            templateUrl: 'app/pages/ourBrand/ourBrand.html',
+            templateUrl: 'app/ourBrand/ourBrand.html',
             controller: 'ourBrandController'
         })
         .state('inventory', {
             url: '/inventory',
-            templateUrl: 'app/pages/inventory/inventory.html',
+            templateUrl: 'app/inventory/inventory.html',
             controller: 'inventoryController'
         })
         .state('inventoryItem', {
             url: '/inventory/:id',
-            templateUrl: 'app/pages/item/item.html',
+            templateUrl: 'app/item/item.html',
             controller: 'itemController'
         })
         .state('admin', {
