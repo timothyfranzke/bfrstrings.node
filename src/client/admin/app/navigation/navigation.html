@@ -1,0 +1,82 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-content layout="column" layout-padding >
+        <md-input-container>
+            <label>Search Inventory</label>
+            <input type="text" class="search" ng-model="searchValue" ng-change="search(searchValue)">
+        </md-input-container>
+        <span layout="row" layout-padding layout-align="center center">
+                <label>Add Card</label>
+                <md-button class="material-icons" ng-click="addCard('home')">
+                    add
+                </md-button>
+            </span>
+        <md-button layout="row" layout-align="start" href="#/admin/inventory">
+            <md-icon class="material-icons">music_note</md-icon>
+            Inventory
+        </md-button>
+        <div ng-show="showInventory" layout="column">
+            <span layout="row" layout-padding layout-align="center center">
+                <md-button layout="row" layout-align="start" ng-click="filterGuitar()">
+                    Guitars
+                </md-button>
+                <md-button class="material-icons" ng-click="addInstrument('guitar')">
+                    add
+                </md-button>
+            </span>
+            <span layout="row" layout-padding layout-align="center center">
+                <md-button layout="row" layout-align="start" ng-click="filterBanjo()">
+                    Banjos
+                </md-button>
+                <md-button class="material-icons" ng-click="addInstrument('banjo')">
+                    add
+                </md-button>
+            </span>
+            <span layout="row" layout-padding layout-align="center center">
+                <md-button layout="row" layout-align="start" ng-click="filterMando()">
+                    Mandolins
+                </md-button>
+                <md-button class="material-icons" ng-click="addInstrument('mando')">
+                    add
+                </md-button>
+            </span>
+            <span layout="row" layout-padding layout-align="center center">
+                <md-button layout="row" layout-align="start" ng-click="filterOther()">
+                    Other Instruments
+                </md-button>
+                <md-button class="material-icons"  ng-click="addInstrument('other')">
+                    add
+                </md-button>
+            </span>
+        </div>
+        <md-divider></md-divider>
+        <span layout="row" layout-padding>
+            <md-button layout="row" layout-align="start">
+                <md-icon class="material-icons">event</md-icon>
+                Events
+            </md-button>
+            <md-button layout="row" class="md-fab md-primary material-icons" ng-click="addCard('event')">
+                add
+            </md-button>
+        </span>
+        <md-divider></md-divider>
+        <span layout="row" layout-padding>
+            <md-button layout="row" layout-align="start">
+                <md-icon class="material-icons">build</md-icon>
+                Repair Shop
+            </md-button>
+            <md-button layout="row" class="md-fab md-primary material-icons" ng-click="addCard('repairShop')">
+                add
+            </md-button>
+        </span>
+        <md-divider></md-divider>
+        <span layout="row" layout-padding>
+            <md-button layout="row" layout-align="start">
+                <md-icon class="material-icons">build</md-icon>
+                Our Brand
+            </md-button>
+            <md-button layout="row" class="md-fab md-primary material-icons" ng-click="addCard('ourBrand')">
+                add
+            </md-button>
+        </span>
+    </md-content>
+</md-sidenav>

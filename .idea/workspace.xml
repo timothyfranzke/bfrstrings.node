@@ -2,17 +2,182 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf1f571d-3711-43e6-85cc-ebd26a9aa3ed" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/bfController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/contact/contactController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/events/eventsController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/home/home.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/home/homeController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/inventory/inventoryController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/item/itemController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/models/eventModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/models/inventoryModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/navigation/navigation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/navigation/navigationDirective.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/services/base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/services/cardService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/services/eventServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/app/services/imageService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/ng-wig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/about/about.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/admin/admin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/admin/adminController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/admin/card/card.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/admin/card/cardController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/contact/contact.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/events/eventsController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/home/home.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/home/homeController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/inventory/inventory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/item/item.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/ourBrand/ourBrand.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/ourBrand/ourBrandController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/repairShop/repairShop.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/repairShop/repairShopController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/services/cardService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/services/instrumentService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/app/services/inventoryService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/css/image-crop-styles.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/css/ng-wig.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/angular-froala.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/angular-sanitize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/ap.fotorama.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/froala-sanitize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/image-crop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/textAngular-rangy.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/textAngular-sanitize.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/site/lib/js/textAngular.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/app/events/eventsController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/app/home/homeController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/bower.json" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/about/about.html" afterPath="$PROJECT_DIR$/src/client/admin/app/about/about.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/app.js" afterPath="$PROJECT_DIR$/src/client/site/app/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/bfController.js" afterPath="$PROJECT_DIR$/src/client/site/app/bfController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/contact/contact.html" afterPath="$PROJECT_DIR$/src/client/admin/app/contact/contact.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/contact/contactController.js" afterPath="$PROJECT_DIR$/src/client/site/app/contact/contactController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/events/events.html" afterPath="$PROJECT_DIR$/src/client/admin/app/events/events.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/home/home.html" afterPath="$PROJECT_DIR$/src/client/site/app/events/events.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/inventory/inventory.html" afterPath="$PROJECT_DIR$/src/client/admin/app/inventory/inventory.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/inventory/inventoryController.js" afterPath="$PROJECT_DIR$/src/client/site/app/inventory/inventoryController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/item/item.html" afterPath="$PROJECT_DIR$/src/client/admin/app/item/item.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/item/itemController.js" afterPath="$PROJECT_DIR$/src/client/site/app/item/itemController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/models/eventModel.js" afterPath="$PROJECT_DIR$/src/client/site/app/models/eventModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/models/inventoryModel.js" afterPath="$PROJECT_DIR$/src/client/site/app/models/inventoryModel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/navigation/navigation.html" afterPath="$PROJECT_DIR$/src/client/site/app/navigation/navigation.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/navigation/navigationController.js" afterPath="$PROJECT_DIR$/src/client/site/app/navigation/navigationController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/navigation/navigationDirective.js" afterPath="$PROJECT_DIR$/src/client/site/app/navigation/navigationDirective.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/ourBrand/ourBrand.html" afterPath="$PROJECT_DIR$/src/client/admin/app/ourBrand/ourBrand.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/ourBrand/ourBrandController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/ourBrand/ourBrandController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/repairShop/repairShop.html" afterPath="$PROJECT_DIR$/src/client/admin/app/repairShop/repairShop.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/repairShop/repairShopController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/repairShop/repairShopController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/router.js" afterPath="$PROJECT_DIR$/src/client/site/app/router.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/services/base.js" afterPath="$PROJECT_DIR$/src/client/site/app/services/base.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/services/eventServices.js" afterPath="$PROJECT_DIR$/src/client/site/app/services/eventServices.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/services/instrumentService.js" afterPath="$PROJECT_DIR$/src/client/admin/app/services/instrumentService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/services/inventoryService.js" afterPath="$PROJECT_DIR$/src/client/admin/app/services/inventoryService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/home/homeConfig.json" afterPath="$PROJECT_DIR$/src/client/site/configuration/home/homeConfig.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/home/img/1.jpg" afterPath="$PROJECT_DIR$/src/client/site/configuration/home/img/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/ourBrand/img/1.jpg" afterPath="$PROJECT_DIR$/src/client/site/configuration/ourBrand/img/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/ourBrand/img/repair-1.jpg" afterPath="$PROJECT_DIR$/src/client/site/configuration/ourBrand/img/repair-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/ourBrand/ourBrandConfig.json" afterPath="$PROJECT_DIR$/src/client/site/configuration/ourBrand/ourBrandConfig.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/repairShop/img/1.jpg" afterPath="$PROJECT_DIR$/src/client/site/configuration/repairShop/img/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/repairShop/img/repair-1.jpg" afterPath="$PROJECT_DIR$/src/client/site/configuration/repairShop/img/repair-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/repairShop/img/repair-2.jpg" afterPath="$PROJECT_DIR$/src/client/site/configuration/repairShop/img/repair-2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/configuration/repairShop/repairShopConfig.json" afterPath="$PROJECT_DIR$/src/client/site/configuration/repairShop/repairShopConfig.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/css/style.css" afterPath="$PROJECT_DIR$/src/client/site/css/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/1.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/addressUnderline.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/addressUnderline.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/banjos.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/banjos.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/banjos.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/banjos.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/bfstringshead.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/bfstringshead.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/bgMobile.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/bgMobile.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/bradford-franzke.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/bradford-franzke.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/cat.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/cat.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/filter.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/filter.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/fix.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/fix.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/fret-shop.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/fret-shop.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/gal1.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/gal1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/gal2.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/gal2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/gal3.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/gal3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/gal4.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/gal4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/gal5.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/gal5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/guitars.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/guitars.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/guitars.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/guitars.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/hawthorne.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/hawthorne.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/header-bf.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/header-bf.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/header.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/header.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/header.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/header.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/headerImg.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/headerImg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/headerRepeat.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/headerRepeat.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/headerWhite.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/headerWhite.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/header_background_image.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/header_background_image.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/header_background_image_v2.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/header_background_image_v2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/logo.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/logoHawthorn.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/logoHawthorn.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/logoOzarkThunder.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/logoOzarkThunder.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/logoTwo.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/logoTwo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/mandolins.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/mandolins.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/mandolins.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/mandolins.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/multiDiv.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/multiDiv.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/orangeUnderline.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/orangeUnderline.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/ozark.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/ozark.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/pages-header.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/pages-header.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/rec1.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/rec1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/rec2.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/rec2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/rec3.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/rec3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/search.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/search.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/shop.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/shop.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/sideNavYellow.png" afterPath="$PROJECT_DIR$/src/client/site/img/bg/sideNavYellow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bg/tile.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bg/tile.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/bgMobile.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/bgMobile.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/1.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/1.png" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/2.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/2.png" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/3.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/3.png" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/4.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/fretshop/4.png" afterPath="$PROJECT_DIR$/src/client/site/img/fretshop/4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/header-bf.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/header-bf.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/header_background_image_v2.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/header_background_image_v2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/home/event.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/home/event.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/home/event.png" afterPath="$PROJECT_DIR$/src/client/site/img/home/event.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/home/home.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/home/home.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/home/home.png" afterPath="$PROJECT_DIR$/src/client/site/img/home/home.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/imageConfiguration.json" afterPath="$PROJECT_DIR$/src/client/site/img/imageConfiguration.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/mobile-header-bg.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/mobile-header-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/mobile-header.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/mobile-header.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/repeater.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/repeater.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/slider/1.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/slider/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/slider/2.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/slider/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/slider/3.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/slider/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/slider/4.jpg" afterPath="$PROJECT_DIR$/src/client/site/img/slider/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/img/slider/imageNumber.js" afterPath="$PROJECT_DIR$/src/client/site/img/slider/imageNumber.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/index.html" afterPath="$PROJECT_DIR$/src/client/admin/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/css/image-crop-styles.css" afterPath="$PROJECT_DIR$/src/client/admin/lib/css/image-crop-styles.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/css/ng-wig.css" afterPath="$PROJECT_DIR$/src/client/admin/lib/css/ng-wig.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/angular-froala.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/angular-froala.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/angular-sanitize.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/angular-sanitize.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/ap.fotorama.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/ap.fotorama.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/froala-sanitize.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/froala-sanitize.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/image-crop.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/image-crop.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/textAngular-rangy.min.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/textAngular-rangy.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/textAngular-sanitize.min.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/textAngular-sanitize.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/lib/js/textAngular.min.js" afterPath="$PROJECT_DIR$/src/client/admin/lib/js/textAngular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/events/events.html" afterPath="$PROJECT_DIR$/src/client/app/events/events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/events/eventsController.js" afterPath="$PROJECT_DIR$/src/client/app/events/eventsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/inventory/inventory.html" afterPath="$PROJECT_DIR$/src/client/app/inventory/inventory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/inventory/inventoryController.js" afterPath="$PROJECT_DIR$/src/client/app/inventory/inventoryController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/item/item.html" afterPath="$PROJECT_DIR$/src/client/app/item/item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/item/itemController.js" afterPath="$PROJECT_DIR$/src/client/app/item/itemController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/services/base.js" afterPath="$PROJECT_DIR$/src/client/app/services/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/services/eventServices.js" afterPath="$PROJECT_DIR$/src/client/app/services/eventServices.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/app/services/inventoryService.js" afterPath="$PROJECT_DIR$/src/client/app/services/inventoryService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="bfrstrings.node.iws" />
@@ -35,102 +200,108 @@
     <favorites_list name="bfrstrings.node" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bfController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/app/bfController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-594">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eventServices.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/app/services/eventServices.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/app/services/base.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+            <state relative-caret-position="268">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/index.js">
+      <file leaf-file-name="inventory.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/site/app/inventory/inventory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="53" selection-end-column="6" />
+            <state relative-caret-position="454">
+              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/app/home/homeController.js">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/site/app/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-797">
-              <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+            <state relative-caret-position="327">
+              <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/index.html">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="110">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imageNumber.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/img/slider/imageNumber.js">
+      <file leaf-file-name="navigationController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+            <state relative-caret-position="343">
+              <caret line="172" column="64" selection-start-line="172" selection-start-column="64" selection-end-line="172" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inventoryDialog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="732">
+              <caret line="65" column="18" selection-start-line="47" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#4;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#0;n#span#0;n#div#0;n#div#0;n#div#4;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="inventoryService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/app/services/inventoryService.js">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/app/services/inventoryService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+            <state relative-caret-position="0">
+              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cardDialog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#2;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#0;n#span#0;n#div#2;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cardDialogController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -142,6 +313,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSON" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -151,18 +324,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/client/app/app.js" />
-        <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/src/client/index.html" />
-        <option value="$PROJECT_DIR$/src/client/app/router.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/client/app/services/inventoryService.js" />
-        <option value="$PROJECT_DIR$/src/client/app/services/base.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/contact/contactController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/events/eventsController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/item/itemController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/models/eventModel.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/models/inventoryModel.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/ourBrand/ourBrandController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/repairShop/repairShopController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/services/eventServices.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/services/instrumentService.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/index.html" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/navigation/navigationDirective.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/src/client/app/services/eventServices.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/services/cardService.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/services/base.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/bfController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/router.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/services/inventoryService.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/navigation/navigation.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/bfController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/services/cardService.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/inventory/inventoryController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/item/item.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/services/inventoryService.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/item/itemController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/ourBrand/ourBrand.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/repairShop/repairShop.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/ourBrand/ourBrandController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/router.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/repairShop/repairShopController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/events/events.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/events/eventsController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/navigation/navigation.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/home/homeController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/home/homeController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/home/home.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/services/instrumentService.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/navigation/navigationController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/inventory/inventoryController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/app.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/services/imageService.js" />
+        <option value="$PROJECT_DIR$/dist/public/admin/css/style.css" />
+        <option value="$PROJECT_DIR$/src/client/admin/css/style.css" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialog.html" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/dist/index.js" />
-        <option value="$PROJECT_DIR$/src/client/app/home/homeController.js" />
+        <option value="$PROJECT_DIR$/src/client/site/app/inventory/inventory.html" />
+        <option value="$PROJECT_DIR$/src/client/site/app/home/home.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -183,9 +395,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="34" />
-    <option name="y" value="93" />
-    <option name="width" value="1932" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -262,6 +474,10 @@
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -278,6 +494,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -300,6 +520,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="item" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -321,7 +605,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,25 +627,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfrstrings.node" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfrstrings.node" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -361,25 +635,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfrstrings.node" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bfrstrings.node" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -387,10 +643,220 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="navigation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialogs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="58c068871aaa214a2cb9bb5d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfrstrings.node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="58c06f0cfe821a489887df4a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,11 +865,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\site" />
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\admin\app" />
       <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\lib\css" />
       <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\lib\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\site\app\services" />
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\admin\lib\css" />
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\admin\lib\js" />
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\admin" />
+      <recent name="C:\data\Franzke\development\node\bfrstrings.node\src\client\admin\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -432,6 +908,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -458,6 +940,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cf1f571d-3711-43e6-85cc-ebd26a9aa3ed" name="Default" comment="" />
@@ -465,29 +950,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1488811409557</updated>
-      <workItem from="1488811410759" duration="17532000" />
+      <workItem from="1488811410759" duration="17694000" />
+      <workItem from="1488859614369" duration="2651000" />
+      <workItem from="1488894305939" duration="18563000" />
+      <workItem from="1488937465924" duration="38129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17532000" />
+    <option name="totallyTimeSpent" value="77037000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="93" width="1932" height="1050" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299735" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27657324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -506,47 +995,63 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="613">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/app.js">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/services/cardService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/router.js">
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/services/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        <state relative-caret-position="273">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/bower.json">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/services/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="472">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bower.json">
+    <entry file="file://$PROJECT_DIR$/dist/public/js/modules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="0" column="15642" selection-start-line="0" selection-start-column="15642" selection-end-line="0" selection-end-column="15642" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigationDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/lib/css/ng-wig.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/lib/js/ng-wig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -554,195 +1059,351 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/lib/js/froala-sanitize.js">
+    <entry file="file://$PROJECT_DIR$/src/client/site/configuration/home/homeConfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/services/instrumentService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/services/cardService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/bfController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/public/admin/js/modules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="0" column="16185" selection-start-line="0" selection-start-column="16185" selection-end-line="0" selection-end-column="16185" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/bfController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="87" selection-start-line="0" selection-start-column="87" selection-end-line="0" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/inventory/inventoryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/services/inventoryService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/repairShop/repairShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/ourBrand/ourBrandController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/ourBrand/ourBrand.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="48" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/events/events.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/events/eventsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/repairShop/repairShopController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/ourBrand/ourBrandController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/item/itemController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/home/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="45" selection-start-line="25" selection-start-column="12" selection-end-line="26" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="97" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/navigation/navigationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="114" column="48" selection-start-line="114" selection-start-column="48" selection-end-line="114" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/services/instrumentService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/inventory/inventory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/navigation/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="108" column="72" selection-start-line="108" selection-start-column="72" selection-end-line="108" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/inventory/inventoryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/home/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="100" selection-start-line="0" selection-start-column="100" selection-end-line="0" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/services/imageService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/item/item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1488810980331" expanded="true" signature="2103:2469" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="2138:2455" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="2381:2445" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="2501:3523" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="2588:3511" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="2598:2695" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="2734:2941" ph="..." />
-            <marker date="1488810980331" expanded="false" signature="2820:2824" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="2850:2854" ph="&gt;" />
-            <marker date="1488810980331" expanded="false" signature="2859:2863" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="2867:2871" ph="&gt;" />
-            <marker date="1488810980331" expanded="true" signature="2977:3284" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="3088:3196" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="3099:3185" ph="..." />
-            <marker date="1488810980331" expanded="false" signature="3100:3104" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="3158:3162" ph="&gt;" />
-            <marker date="1488810980331" expanded="false" signature="3168:3172" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="3176:3180" ph="&gt;" />
-            <marker date="1488810980331" expanded="true" signature="3312:3497" ph="..." />
-            <marker date="1488810980331" expanded="false" signature="3386:3390" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="3411:3415" ph="&gt;" />
-            <marker date="1488810980331" expanded="false" signature="3420:3424" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="3428:3432" ph="&gt;" />
-            <marker date="1488810980331" expanded="true" signature="3655:3805" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="3885:4133" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="4200:4464" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="4504:5018" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="22419:22785" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="22448:22771" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="22817:23683" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="22904:23682" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="22914:22990" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="23018:23221" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="23055:23141" ph="..." />
-            <marker date="1488810980331" expanded="false" signature="23067:23071" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="23105:23109" ph="&gt;" />
-            <marker date="1488810980331" expanded="false" signature="23113:23117" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="23121:23125" ph="&gt;" />
-            <marker date="1488810980331" expanded="true" signature="23151:23210" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="23249:23490" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="23286:23391" ph="..." />
-            <marker date="1488810980331" expanded="false" signature="23298:23302" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="23355:23359" ph="&gt;" />
-            <marker date="1488810980331" expanded="false" signature="23363:23367" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="23371:23375" ph="&gt;" />
-            <marker date="1488810980331" expanded="true" signature="23401:23479" ph="..." />
-            <marker date="1488810980331" expanded="true" signature="23518:23668" ph="..." />
-            <marker date="1488810980331" expanded="false" signature="23558:23562" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="23583:23587" ph="&gt;" />
-            <marker date="1488810980331" expanded="false" signature="23591:23595" ph="&lt;" />
-            <marker date="1488810980331" expanded="false" signature="23599:23603" ph="&gt;" />
-            <marker date="1488810980331" expanded="true" signature="23807:24161" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="24239:24592" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="24632:25099" ph="{...}" />
-            <marker date="1488810980331" expanded="true" signature="25162:25437" ph="{...}" />
+            <marker date="1488956108430" expanded="false" signature="563:574" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
+    <entry file="file://$PROJECT_DIR$/dist/public/admin/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="559">
+          <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="305">
+          <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/inventory/inventory.html">
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="452">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="65" column="18" selection-start-line="47" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#4;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#0;n#span#0;n#div#0;n#div#0;n#div#4;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="36" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/services/inventoryService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/css/site.css">
+    <entry file="file://$PROJECT_DIR$/dist/images/58c06f0cfe821a489887df4a/58c06f0cfe821a489887df4b.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="343">
+          <caret line="172" column="64" selection-start-line="172" selection-start-column="64" selection-end-line="172" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/services/eventService.js">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="198">
+          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#2;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#0;n#span#0;n#div#2;n#md-dialog-content#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/services/inventoryService.js">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/bfController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/services/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/services/eventServices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        <state relative-caret-position="578">
+          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        <state relative-caret-position="268">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.js">
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/inventory/inventory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="53" selection-end-column="6" />
+        <state relative-caret-position="454">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/img/slider/imageNumber.js">
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+        <state relative-caret-position="327">
+          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/app/home/homeController.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-797">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+        <state relative-caret-position="110">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding />
         </state>
       </provider>

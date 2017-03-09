@@ -21,6 +21,7 @@
     "ngWig": "ng-wig#^3.0.14",
     "angular-ui-router": "^0.4.2",
     "angular-cookies": "^1.6.2",
-    "angular-messages": "^1.6.2"
+    "angular-messages": "^1.6.2",
+    "angular-base64-upload": "^0.1.19"
   }
 }

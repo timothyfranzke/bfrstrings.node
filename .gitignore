@@ -2,3 +2,6 @@ node_modules
 bower_components
 dist
 client/bower_components
+.idea
+.idea/workspace.xml
+.gitignore

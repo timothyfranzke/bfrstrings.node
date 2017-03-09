@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var gls = require('gulp-live-server');
 var connect = require('gulp-connect');
-
+var server;
 // Include plugins
 var plugins = require("gulp-load-plugins")({
     pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
@@ -21,55 +21,73 @@ gulp.task('bowerjs', function() {
         .pipe(plugins.filter('**/*.js'))
         .pipe(plugins.concat('main.js'))
         //.pipe(plugins.uglify({mangle:false}))
-        .pipe(gulp.dest('dist/public/js'));
+        .pipe(gulp.dest('dist/public/site/js'))
+        .pipe(gulp.dest('dist/public/admin/js'));
 });
 
 gulp.task('bowercss', function() {
     gulp.src(plugins.mainBowerFiles({
         paths: {
-            bowerDirectory: './src/client/bower_components',
-            bowerJson: './src/client/bower.json'
+            bowerDirectory: './bower_components',
+            bowerJson: 'bower.json'
         }
     }))
         .pipe(plugins.filter('**/*.css'))
         .pipe(plugins.concat('main.css'))
-        .pipe(gulp.dest('dist/public/css'));
-
+        .pipe(gulp.dest('dist/public/site/css'))
+        .pipe(gulp.dest('dist/public/admin/css'))
+    ;
 });
 
 gulp.task('html', function(){
-    gulp.src(['src/client/**/*.html','src/client/index.html'] )
-        .pipe(gulp.dest('dist/public/'));
+    gulp.src(['src/client/site/**/*.html'] )
+        .pipe(gulp.dest('dist/public/site/'));
+    gulp.src(['src/client/admin/**/*.html'] )
+        .pipe(gulp.dest('dist/public/admin/'));
 });
 
 gulp.task('lib', function(){
-    gulp.src('src/client/lib/js/*.js')
+    gulp.src('src/client/site/lib/js/*.js')
         .pipe(plugins.concat('lib.js'))
         .pipe(plugins.uglify({mangle: false}))
-        .pipe(gulp.dest('dist/public/lib'));
-    gulp.src('src/client/lib/css/*.js')
+        .pipe(gulp.dest('dist/public/site/lib'));
+    gulp.src('src/client/site/lib/css/*.js')
         .pipe(plugins.concat('lib.css'))
         .pipe(plugins.uglify({mangle: false}))
-        .pipe(gulp.dest('dist/public/lib'))
+        .pipe(gulp.dest('dist/public/site/lib'));
+    gulp.src('src/client/admin/lib/js/*.js')
+        .pipe(plugins.concat('lib.js'))
+        .pipe(plugins.uglify({mangle: false}))
+        .pipe(gulp.dest('dist/public/admin/lib'));
+    gulp.src('src/client/admin/lib/css/*.js')
+        .pipe(plugins.concat('lib.css'))
+        .pipe(plugins.uglify({mangle: false}))
+        .pipe(gulp.dest('dist/public/admin/lib'))
 });
 
 gulp.task('img', function(){
-    gulp.src(['src/client/img/*'])
-        .pipe(gulp.dest('dist/public/img'))
-   gulp.src(['src/client/img/bg/*'])
-       .pipe(gulp.dest('dist/public/img/bg'))
+    gulp.src(['src/client/site/img/*'])
+        .pipe(gulp.dest('dist/public/site/img'));
+   gulp.src(['src/client/site/img/bg/*'])
+       .pipe(gulp.dest('dist/public/site/img/bg'));
+    gulp.src(['src/client/admin/img/*'])
+        .pipe(gulp.dest('dist/public/admin/img'));
+    gulp.src(['src/client/site/img/bg/*'])
+        .pipe(gulp.dest('dist/public/admin/img/bg'));
 
 });
 
 gulp.task('config', function(){
-    gulp.src(['src/client/configuration/**/*.json'])
-        .pipe(gulp.dest('dist/public/configuration'));
+    gulp.src(['src/client/site/configuration/**/*.json'])
+        .pipe(gulp.dest('dist/public/site/configuration'));
 
 });
 
 gulp.task('css', function(){
-    gulp.src(['src/client/css/*'])
-        .pipe(gulp.dest('dist/public/css'))
+    gulp.src(['src/client/site/css/*'])
+        .pipe(gulp.dest('dist/public/site/css'))
+    gulp.src(['src/client/admin/css/*'])
+        .pipe(gulp.dest('dist/public/admin/css'))
 });
 
 gulp.task('full-clean', function(){
@@ -94,15 +112,26 @@ gulp.task('hint', function(){
 });
 
 gulp.task('modules', function(){
-    gulp.src(['src/client/app/app.js',
-        'src/client/router.js',
-        'src/client/bfController.js',
-        'src/client/models/*.js',
-        'src/client/services/*/js',
-        'src/client/app/**/*.js'])
+    gulp.src(['src/client/site/app/app.js',
+        'src/client/site/router.js',
+        'src/client/site/bfController.js',
+        'src/client/site/models/*.js',
+        'src/client/site/services/*/js',
+        'src/client/site/app/**/*.js',
+        'src/client/site/app/admin/**/*.js'])
         .pipe(plugins.concat('modules.js'))
         .pipe(plugins.uglify({mangle: false}))
-        .pipe(gulp.dest('dist/public/js'))
+        .pipe(gulp.dest('dist/public/site/js'));
+    gulp.src(['src/client/admin/app/app.js',
+        'src/client/admin/router.js',
+        'src/client/admin/bfController.js',
+        'src/client/admin/models/*.js',
+        'src/client/admin/services/*/js',
+        'src/client/admin/app/**/*.js',
+        'src/client/admin/app/admin/**/*.js'])
+        .pipe(plugins.concat('modules.js'))
+        .pipe(plugins.uglify({mangle: false}))
+        .pipe(gulp.dest('dist/public/admin/js'))
 });
 gulp.task('server', function(){
     gulp.src(['src/server/**/*.js'])
@@ -116,8 +145,16 @@ gulp.task('app', function(){
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('build', ['clean', 'html', 'modules', 'webserver', 'server', 'app', 'lib', 'css', 'img', 'config'], function(){
-    console.log("building")
+gulp.task('build', ['clean', 'html', 'modules', 'server', 'app', 'lib', 'css', 'img', 'config'], function(){
+    if(server){
+        server.stop();
+    }
+    else
+    {
+        server = gls.new('./dist/index.js');
+    }
+    gulp.run('webserver');
+
 });
 
 gulp.task('full-build', ['build', 'bowerjs', 'bowercss']);
@@ -132,7 +169,7 @@ gulp.task('webserver', function() {
      path:'./dist'
      })
      );*/
-    var server = gls.new('./dist/index.js');
+
     return server.start();
 /*    connect.server({
         root: ['dist'],
@@ -142,6 +179,9 @@ gulp.task('webserver', function() {
     })*/
 });
 
-gulp.task('watch', function(){
-    plugins.watch(['src/client/app/**/*.js', 'src/client/app/**/*.html', 'src/client/app/**/*.css'],['build', 'webserver'])
+gulp.task('default', function(){
+    gulp.run('build');
+    gulp.watch(['./src/index.js', './src/client/site/app/**/*.js', './src/client/site/app/**/*.html','./src/client/admin/app/**/*.js','./src/client/site/app/**/*.html'], function(){
+        gulp.run('build');
+    })
 });

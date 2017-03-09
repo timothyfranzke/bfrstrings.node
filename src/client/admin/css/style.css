@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{font-family: 'Open Sans', sans-serif;background-color:#4e4e62}
+.clear{clear:both;}
+hr{border:none; height:1px; background:#DEDEDE;}
+a {border:none;}
+
+.text{margin:50px;}
+#header{background:#FFF; padding:10px 4%; width:92%; margin:0 auto;}
+#logo{float:left; width:25%; max-width:266px;}
+#logo img{max-width:100%; height:auto;}
+
+#nav{width:73%;margin-top:35px;}
+#nav ul ul {display: none;}
+#nav ul li:hover > ul {display: block;}
+#nav ul {padding: 0; list-style: none; position: relative;}
+#nav ul:after {content: ""; clear: both; display: block;}
+#nav ul li {display:inline-block; position:relative;}
+#nav ul li:hover a {color: #FE7E00;}
+#nav ul li a {display: block; padding: 0 26px; color: #434343; text-transform:uppercase; font-size:15px; text-decoration: none; letter-spacing:3px;}
+#nav ul ul {border-radius: 0px; padding:15px 0 0 0; position: absolute; top: 100%; z-index:500; left:20px;}
+#nav ul ul li {float: none; border-bottom: 1px solid #DEDEDE; position: relative; background: #F0F0F0; display:block; width:200px; text-align:left; }
+#nav ul ul li a {padding: 10px 20px; text-align:left; color: #434343 !important;}
+#nav ul ul li a:hover {background: #D9D9D9;}
+.slicknav_menu {display:none;}
+
+#mainImage{width:100%; margin:0 auto; padding:0;}
+#mainImage img{width:100%; height:100%;}
+.mainImage {width:100%; margin:0 auto; padding:0;}
+.mainImage img {width:100%; height:100%;}
+.mainImage {background-image: url("../img/bg/header_background_image_v2.jpg");
+    background-repeat: repeat-x; }
+
+#featured{width:92%; background:url(../img/bg/tile.jpg) repeat #FDFDFD; padding:0 4% 140px; position:relative;}
+#featured2{width:92%; background:#FFFFFF; padding:40px 4% 60px; position:relative;}
+#featured2 .instrument img{margin:0 auto;}
+.instrument{float: left; width:32%; margin-right:2%; text-align:center; position:relative;}
+.instrument img{width:100%; height:auto; margin:-40px auto 0; }
+.lastBox{margin-right:0 !important;}
+.instLink{display:block; width:96%; background:#f0ebe6; color:#302104; padding:20px 2%; font-size:22px; letter-spacing:5px; text-decoration:none; text-transform:uppercase;}
+
+#instWraps{background:#f7f7f7; width:92%; padding:20px 4% 60px; position:relative;}
+#instWrap{background:#f7f7f7;}
+.breadCrumbs{font-size:14px;}
+.breadCrumbs a{text-decoration:none; color:#3C3C3C;}
+.searchBar{float:right; width:50%; text-align:right;}
+.search{display:inline-block; height:30px; border:1px solid #CACACA; max-width:300px; width:40%; padding-left:4%; background:url(../img/bg/search.jpg) no-repeat #FFF; background-position: 2% center;}
+.contact{display:inline-block; height:30px; border:1px solid #CACACA; max-width:300px; width:40%; padding-left:4%; background: #FFF; background-position: 2% center;}
+.filter{display:inline-block; height:35px; border:1px solid #CACACA; max-width:300px; width:30%; background:#FFF; border-radius:0px;}
+
+.sideNav{float:left; width:23%; margin-right:2%; height:80%; border-right:1px solid #DEDEDE;}
+.sideNav .instrument{float:none; width:90%; margin:20px 0; display:block;}
+.sideNav .instrument img{margin-top:0;}
+#catalogue{}
+#catalogue h1{font-size:54px; line-height:64px; letter-spacing:12px; text-transform:uppercase; font-weight:normal; margin:15px 0;}
+
+.catItem{margin-right:2%; width:400px; margin-top:20px; margin-bottom:20px; padding:5px;  border: 2px solid #dbd7d8;}
+.catItem:nth-child(2) {clear:right;}
+.catThumb{float:left; width:125px; overflow: hidden; margin-right:2%;}
+.catThumb img{width:100%; height:100%;}
+.catItem h3{font-size:18px; font-weight:normal; margin:10px auto; text-transform:uppercase; letter-spacing:3px;}
+.viewButton{display:inline-block; background:#8a8a8a; color:#FFF; max-width:80px; width:40%; text-align:center; font-size:14px; padding:10px 0;}
+.priceButton{display:inline-block; background:#f5ba42; color:#FFF; max-width:80px; width:40%; text-align:center; font-size:14px; padding:10px 0;}
+
+#fixIt{background:#f0ebe6; width:92%; padding:0 4%; margin:0 auto; position:relative; text-align:center;}
+.fixHolder{margin:0 auto; background:#f0ebe6;}
+.fixHolder img{width:100%; height:auto; }
+.fixText{font-size:22px; line-height:32px; color:#302104; padding:40px 0; width:90%; margin:0 auto;}
+
+.gallery{width:28%; float:left; margin-right:2%;}
+.gallerySmall{width:90%; float:left; margin-right:2%;}
+.itemDescription{width:36%; float:left; color:#302104; font-size:20px; line-height:30px; margin-right:4%;}
+.itemDescription h1{font-size:34px; line-height:44px; letter-spacing:5px; text-transform:uppercase; font-weight:normal;}
+.price{background:#f5ba42; color:#FFFFFF; font-size:42px; text-align:center; width:100%; padding:15px 0; margin:10px auto;}
+.backButton{background:#dedede; color:#767676; font-size:12px; margin:20px 0; width:120px; text-align:center; font-weight:bold; display:block;}
+.backButton:hover{background:#868686; color:#FFF;}
+.recentlyViewed{width:25%; float:left; padding-left:4%; border-left:1px solid #DEDEDE; position:absolute; right:4%; height:77%;}
+.recentlyViewed h2{font-size:16px; line-height:26px; text-transform:uppercase; letter-spacing:3px; margin:20px 0; font-weight:normal;}
+.recentItem{margin-bottom:20px;}
+.recentItem a{color:#FF980B;}
+.recentItem h3{font-size:18px; font-weight:normal; margin:10px auto;}
+.recentThumb{float:left; margin-right:4%; width:23%;}
+.recentThumb img{width:100%; height:auto;}
+
+#location{background:#FFF; padding:60px 4%; width:92%;}
+.locationLeft{ border:15px solid #DDDDDD;}
+.locationLeft img{width:100%; }
+.locationRight{font-size:20px; line-height:34px; padding-top:20px; color:#4E4E4E; text-align:center;}
+.locationRight h2{font-size:36px; line-height:46px; text-transform:uppercase; letter-spacing:18px; font-weight:normal; color:#929292; text-align:center;}
+.navigation{font-size:20px; line-height:34px; padding-top:20px; color:#4E4E4E; text-align:center;}
+.navigation h2{font-size:20px; line-height:46px; text-transform:uppercase; letter-spacing:12px; font-weight:normal; color:#929292; text-align:center;}
+#brands{background:#ededed; width:96%; margin:0 auto; padding:40px 2%; text-align:center;}
+#brands img{max-width:28%; height:auto; margin:0 1%;}
+
+#footer{background:#5d5d5d; color:#FFF; font-size:18px; line-height:32px; letter-spacing:1px; text-align:center; width:92%; padding:60px 4%;}
+.scrolloff {pointer-events: none;}
+.loading {
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:999;
+}
+.loader {
+    height:2em;
+    width:2em;
+    z-index:999;
+    overflow: visible;
+    margin: auto;
+    top: 45%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.imageCropperBg{
+    background-color: #808080;
+    width: 510px;
+    margin: 10px;
+}
+.clickable{
+    cursor: pointer;
+}
+.header {
+    background-image: url("../img/bg/header_background_image_v2.jpg");
+    background-repeat: repeat-x;
+    background-size:100px;
+    height:150px;
+    text-align: center;
+}
+.header img{
+    height:100%;
+}
+.sold{
+    opacity: .5;
+}
+.viewButtonMaterial{
+    background:#8a8a8a; color:#FFF;
+}
+.priceButtonMaterial{
+    background:#f5ba42; color:#FFF;
+}
+.priceButtonMaterial:disabled{background:#f5ba42; color:white; font-size:12px; margin:20px 0; width:120px; text-align:center; font-weight:bold; display:block;}
+.item h2{font-size:36px; line-height:46px; text-transform:uppercase; letter-spacing:18px; font-weight:normal; color:#929292; text-align:center;}
+
+.scroll-wrapper {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px !important;
+    width: 95%;
+    padding-top: 5px;
+}
+.scrolls {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 200px;
+    white-space:nowrap
+}
+.imageDiv img {
+    box-shadow: 1px 1px 10px #999;
+    margin: 2px;
+    max-height: 50px;
+    cursor: pointer;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align:top;
+}

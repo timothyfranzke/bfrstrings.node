@@ -1,0 +1,45 @@
+    <h1>{{type}}</h1>
+    <md-grid-list
+            md-cols="4" md-cols-sm="4" md-cols-md="8" md-cols-gt-md="12"
+            md-row-height="8:7"
+            md-gutter="8px" md-gutter-gt-sm="4px">
+        <md-grid-tile ng-repeat="item in items"
+                      md-rowspan="3"
+                      md-colspan="4"
+                      ng-if="item.visible"
+                      layout="row"
+                      layout-align="start center"
+                      layout-padding
+
+        >
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.name}}</span>
+                        <span class="md-subhead">{{item.price | currency}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-md card-media">
+                            <img ng-src="img/inventory/{{item.id}}/1.png" ng-show="!imgLoad"/>
+                            <md-progress-circular ng-show="imgLoad" class="md-accent" md-diameter="40"></md-progress-circular>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="editInventory(item)">Edit</md-button>
+                    <md-button ng-click="deleteInventory(item.id)">Delete</md-button>
+                </md-card-actions>
+            </md-card>
+<!--            <div layout="row" md-whiteframe="3dp" layout-align="start" class="catItem">
+                <div class="catThumb" layout="row" layout-align="start" flex="40">
+                    <img ng-src="img/inventory/{{item.id}}/1.png"/>
+                </div>
+                <div layout="column" flex="60">
+                    <h3>{{item.name}}</h3>
+                    <div layout="row">
+                        <a href="#/inventory/{{item.id}}" class="viewButton">View</a> <div class="priceButton">${{item.price}}</div>
+                    </div>
+                </div>
+            </div>-->
+        </md-grid-tile>
+    </md-grid-list>
