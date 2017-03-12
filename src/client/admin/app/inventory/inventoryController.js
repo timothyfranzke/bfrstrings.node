@@ -1,4 +1,4 @@
-bfAppAdmin.controller('inventoryController', function($scope, inventoryService, instrumentService, inventoryModel, $stateParams, $timeout, $state, $mdDialog, $mdSidenav, $mdMedia){
+bfAppAdmin.controller('inventoryController', function($scope, inventoryService, instrumentService, inventoryModel, baseService,  $stateParams, $timeout, $state, $mdDialog, $mdSidenav, $mdMedia){
     $scope.isHome = true;
     $scope.isSmallScreen = $mdMedia('gt-md');
     $scope.selectedInventory = "";
@@ -82,8 +82,8 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
     $state.goItem = function(id){
         state.go('inventoryItem', { id: id });
     };
-    $scope.deleteCard = function(index){
-        baseService.DELETE(url,inventoryModel.inventory[index]._id).then(function(res){
+    $scope.deleteCard = function(id,index){
+        baseService.DELETE(url,id).then(function(res){
             inventoryModel.inventory.splice(index,1);
         })
     }

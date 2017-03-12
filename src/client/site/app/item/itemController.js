@@ -11,13 +11,6 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
         };
         $scope.isLargeScreen = $mdMedia('gt-md');
         $scope.items = [];
-        $scope.options = {
-            width: '100%',
-            height: 400,
-            loop: true,
-            keyboard: true,
-            nav: 'thumbs'
-        };
         $scope.item = {};
         $scope.recentlyViewed = [];
         $scope.isSmallScreen = $mdMedia('sm');
@@ -55,6 +48,12 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
         $scope.goInventory = function(){
             $state.go("inventory");
         };
+        var img = {};
+        img.id = '58c222a0bfe1483098ba07dd';
+        img.thumb = 'images/58c222a0bfe1483098ba07dd/thumbs/58c222a0bfe1483098ba07de.png';
+        img.full = 'images/58c222a0bfe1483098ba07dd/58c222a0bfe1483098ba07de.png';
+        img.img = 'images/58c222a0bfe1483098ba07dd/58c222a0bfe1483098ba07de.png';
+
 /*        inventoryService.getImage($stateParams.id).then(function(data){
             $scope.images = data;
             $scope.images.forEach(function(img){
@@ -66,6 +65,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
         });*/
         inventoryService.getItemById($stateParams.id).then(function(data)
         {
+            console.log(data);
             switch(data.type)
             {
                 case '1':
@@ -95,7 +95,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
 
             }
             $scope.item = data;
-
+            $scope.images = data.images;
             $scope.description = $sce.trustAsHtml($scope.item.description);
 
             //$scope.item.type ="Banjo";

@@ -74,6 +74,7 @@ app.get('/api/cards', function(req,res){
 
 app.post('/api/cards', function(req,res){
     req.body.active = true;
+    req.date_created = Date.now();
     db.collection('cards').insert(req.body, function(err, result){
         if (err) return console.log(err);
 
@@ -96,8 +97,8 @@ app.post('/api/cards/:id/image', function(req, res){
                 fs.mkdirSync(image_dir);
             }
             var imageDir = __dirname + "/images/" + id + "/" + image_id + ".png";
-
-            var binaryData = new Buffer(imageBody.base64.full, 'base64').toString('binary');
+            var imageBase64 = imageBody.base64 .full.split("base64,")[1];
+            var binaryData = new Buffer(imageBase64, 'base64').toString('binary');
 
             fs.writeFile(imageDir, binaryData, "binary", function(err) {
                 console.log("error!");
@@ -144,9 +145,20 @@ app.get('/api/inventory', function(req,res){
 
 app.post('/api/inventory', function(req,res){
     req.body.active = true;
+    req.date_created = Date.now();
     db.collection('inventory').insert(req.body, function(err, result){
         if (err) return console.log(err);
 
+        if(req.body.includeOnHome)
+        {
+            var item = result.ops[0];
+            var id = result.ops[0]._id;
+            delete item._id;
+            item.inventory_id = id;
+            db.collection('cards').insert(item, function(err, result){
+               if (err) return console.log(err);
+            });
+        }
         res.json(result);
     })
 });
@@ -178,7 +190,13 @@ app.post('/api/inventory/:id/image', function(req, res){
     image.active = true;
     db.collection('images').insert(image, function(err, result){
         var image_id = result.ops[0]._id;
-        db.collection('inventory').findOneAndUpdate({"_id":id},{$push :{"images":image_id} }, function(err, updateResult){
+        var imagesRecord = {
+            "id":image_id,
+            "img":'image/' + id + '/' + image_id + '.png',
+            "thumb":'image/' + id + '/thumbs/' + image_id + '.png',
+            "full":'image/' + id + '/' + image_id + '.png'
+        };
+        db.collection('inventory').findOneAndUpdate({"_id":id},{$push :{"images":imagesRecord} }, function(err, updateResult){
             var image_dir = __dirname + "/images/" + id;
             var thumb_dir = __dirname + "/images/" + id + "/thumbs";
             if (!fs.existsSync(image_dir)){
@@ -190,8 +208,11 @@ app.post('/api/inventory/:id/image', function(req, res){
             var imageDir = __dirname + "/images/" + id + "/" + image_id + ".png";
             var thumbDir = __dirname + "/images/" + id + "/thumbs/" + image_id + ".png";
 
-            var binaryData = new Buffer(imageBody.base64.full, 'base64').toString('binary');
-            var thumbBinaryData = new Buffer(imageBody.base64.thumb, 'base64').toString('binary');
+            var imageBase64 = imageBody.base64.full.split("base64,")[1];
+            var thumbBase64 = imageBody.base64.thumb.split("base64,")[1];
+
+            var binaryData = new Buffer(imageBase64, 'base64').toString('binary');
+            var thumbBinaryData = new Buffer(thumbBase64, 'base64').toString('binary');
 
             fs.writeFile(imageDir, binaryData, "binary", function(err) {
                 //console.log(err); // writes out file without error, but it's not a valid image
@@ -199,8 +220,10 @@ app.post('/api/inventory/:id/image', function(req, res){
             fs.writeFile(thumbDir, thumbBinaryData, "binary", function(err) {
                 //console.log(err); // writes out file without error, but it's not a valid image
             });
-            res.json(result);
+            db.collection('cards').findOneAndUpdate({"inventory_id":id},{$push :{"images":imagesRecord} },function(err,updateResult){res.json(result);});
+
         });
+
     });
 });
 

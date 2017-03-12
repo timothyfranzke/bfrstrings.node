@@ -10,9 +10,12 @@
                     add
                 </md-button>
             </span>
-        <md-button layout="row" layout-align="start" href="#/admin/inventory">
+        <md-button layout="row" layout-align="start" href="/admin/#!/inventory">
             <md-icon class="material-icons">music_note</md-icon>
             Inventory
+        </md-button>
+        <md-button class="material-icons" ng-click="addInstrument()">
+            add
         </md-button>
         <div ng-show="showInventory" layout="column">
             <span layout="row" layout-padding layout-align="center center">

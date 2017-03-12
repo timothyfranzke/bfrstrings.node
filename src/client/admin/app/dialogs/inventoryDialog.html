@@ -10,59 +10,57 @@
                 </md-button>
             </div>
         </md-toolbar>
-
-        <md-dialog-content layout="column" layout-padding>
-            <div layout="row" layout-align="start">
-                <md-input-container flex="50">
-                    <label>Name</label>
-                    <input ng-model="inventoryItem.item.name">
-                </md-input-container>
-            </div>
-            <div layout="row" layout-align="start">
-                <md-input-container flex="50">
-                    <label><em>select instrument type</em></label>
-                    <md-select ng-model="inventoryItem.item.type">
-                        <md-option ng-repeat="type in types" ng-value="type" >
-                            {{type}}
-                        </md-option>
-                    </md-select>
-                </md-input-container>
-            </div>
-            <div layout="row" layout-align="start">
-                <md-input-container flex="50">
-                    <label>Price</label>
-                    <input ng-model="inventoryItem.item.price">
-                </md-input-container>
-            </div>
-            <md-divider></md-divider>
-            <md-input-container layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></md-input-container>
-            <div ng-show="editingDescription">
-                <textarea ng-wig="descrip" class="editor1"></textarea>
-                <div layout="row" layout-padding layout-align="end">
-                    <md-button ng-click="saveDescription(descrip)">Save</md-button>
-                </div>
-            </div>
+        <md-dialog-content layout="column" layout-padding ng-show="!editingDescription">
+            <md-input-container flex="50" layout="row">
+                <label>Name</label>
+                <input ng-model="inventoryItem.item.name">
+            </md-input-container>
+            <md-input-container flex="50">
+                <label>Price</label>
+                <input ng-model="inventoryItem.item.price">
+            </md-input-container>
+            <md-input-container>
+                <label><em>select instrument type</em></label>
+                <md-select ng-model="inventoryItem.item.type">
+                    <md-option ng-repeat="type in types" ng-value="type" >
+                        {{type}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <span layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></span>
             <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
-
-            <md-divider></md-divider>
-            <label>Images</label>
-            <div layout="column">
-                <input style="display:inline"
-                       type='file'
-                       ng-model="uploadedImages"
-                       parser="resizeImage"
-                       base-sixty-four-input
-                       maxsize="1000"
-                       multiple
-                >
-                <div layout="row" layout-padding class="scroll-wrapper">
-                    <div class="scrolls">
-                        <span ng-repeat="image in inventoryItem.images">
-                            <img ng-src="{{image.base64.thumb}}" width="150px" max-height="100%"/>
-                            <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
-                        </span>
-                    </div>
+            <div layout="row" layout-align="start center" layout-margin>
+                <md-checkbox ng-model="inventoryItem.item.includeOnHome">
+                    Feature on Home Page
+                </md-checkbox>
+                <md-datepicker ng-show="inventoryItem.item.includeOnHome" ng-model="inventoryItem.item.expiresOn" md-placeholder="Expires On"></md-datepicker>
+            </div>
+            <md-button class="md-primary md-raised" flex="25">
+                <label for="file-input">Choose Image(s)</label>
+            </md-button>
+            <input id="file-input"
+                   type='file'
+                   ng-model="uploadedImages"
+                   parser="resizeImage"
+                   base-sixty-four-input
+                   maxsize="1000"
+                   multiple
+                   ng-show="false"
+            >
+            <div ng-show="inventoryItem.images.length > 0" layout="row" layout-padding class="scroll-wrapper" >
+                <div class="scrolls">
+                <span ng-repeat="image in inventoryItem.images">
+                    <img ng-src="{{image.base64.thumb}}" width="150px" max-height="100%"/>
+                    <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
+                </span>
                 </div>
+            </div>
+
+        </md-dialog-content>
+        <md-dialog-content ng-show="editingDescription">
+            <textarea ng-wig="descrip" class="editor1"></textarea>
+            <div layout="row" layout-padding layout-align="end">
+                <md-button ng-click="saveDescription(descrip)">Save</md-button>
             </div>
         </md-dialog-content>
 

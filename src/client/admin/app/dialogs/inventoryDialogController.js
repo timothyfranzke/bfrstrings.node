@@ -83,10 +83,10 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
                     thumbHeight = THUMB_MAX_HEIGHT;
                 }
             }
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = img.width;
+            canvas.height = img.height;
             var ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, width, height);
+            ctx.drawImage(img, 0, 0, img.width, img.height);
 
             thumbCanvas.width = thumbWidth;
             thumbCanvas.height = thumbHeight;

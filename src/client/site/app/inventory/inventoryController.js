@@ -1,4 +1,4 @@
-bfApp.controller('inventoryController', function($scope, inventoryService, instrumentService, inventoryModel, $stateParams, $timeout, $state, $mdSidenav, $mdMedia){
+bfApp.controller('inventoryController', function($scope, inventoryService, instrumentService, inventoryModel, baseService, $stateParams, $timeout, $state, $mdSidenav, $mdMedia){
     $scope.isHome = true;
     $scope.isSmallScreen = $mdMedia('gt-md');
     $scope.selectedInventory = "";
@@ -83,6 +83,7 @@ bfApp.controller('inventoryController', function($scope, inventoryService, instr
     $state.goItem = function(id){
         state.go('inventoryItem', { id: id });
     };
+
 
 
 });

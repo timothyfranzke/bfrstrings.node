@@ -10,29 +10,34 @@
         </md-toolbar>
 
     <md-dialog-content layout="column" layout-padding flex>
-        <md-input-container>
-            <label>Select Page</label>
-            <md-select ng-model="holder.card.page">
-                <md-option ng-repeat="page in pages" ng-value="page.page" >
-                    {{page.name}}
-                </md-option>
-            </md-select>
-        </md-input-container>
-        <md-input-container flex>
-            <label>Header</label>
-            <input ng-model="card.header">
-        </md-input-container>
-        <md-input-container layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></md-input-container>
-        <div ng-show="editingDescription">
-            <textarea ng-wig="descrip" class="editor1"></textarea>
-            <div layout="row" layout-padding>
-                <md-button ng-click="saveDescription(descrip)">Save</md-button>
-                <md-button ng-click="editDescription=false">Close</md-button>
+        <h2>Card Details</h2>
+        <div flex="50">
+            <md-divider flex="50"></md-divider>
+            <div ng-show="!editingDescription">
+                <md-input-container>
+                    <label>Select Page</label>
+                    <md-select ng-model="holder.card.page">
+                        <md-option ng-repeat="page in pages" ng-value="page.page" >
+                            {{page.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Header</label>
+                    <input ng-model="holder.card.header">
+                </md-input-container>
+                <md-input-container layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></md-input-container>
+                <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
             </div>
-
-            <md-divider></md-divider>
+            <div ng-show="editingDescription">
+                <textarea ng-wig="descrip" class="editor1"></textarea>
+                <div layout="row" layout-padding>
+                    <md-button ng-click="saveDescription(descrip)">Save</md-button>
+                    <md-button ng-click="editDescription=false">Close</md-button>
+                </div>
+                <md-divider></md-divider>
+            </div>
         </div>
-        <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
         <md-checkbox ng-model="featureInstrument" ng-if="holder.card.page==='home'">
             Feature an Instrument
         </md-checkbox>
@@ -42,7 +47,9 @@
                 <input ng-model="holder.card.instrumentId">
             </md-input-container>
         </div>
-        <label>Images</label>
+        <md-divider></md-divider>
+        <h2>Images</h2>
+        <md-divider flex="50"></md-divider>
         <div layout="column">
             <input style="display:inline"
                    type='file'

@@ -13,7 +13,6 @@
 
         >
             <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{item.name}}</span>
@@ -21,7 +20,7 @@
                     </md-card-title-text>
                     <md-card-title-media>
                         <div class="md-media-md card-media">
-                            <img ng-src="image/{{item._id}}/thumbs/{{item.images[0]}}.png" ng-show="!imgLoad"/>
+                            <img ng-src="{{item.images[0].thumb}}" ng-show="!imgLoad"/>
                             <md-progress-circular ng-show="imgLoad" class="md-accent" md-diameter="40"></md-progress-circular>
                         </div>
                     </md-card-title-media>
