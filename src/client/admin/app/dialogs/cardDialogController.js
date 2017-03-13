@@ -22,10 +22,22 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
     ];
     $scope.editingDescription = false;
     $scope.featureInstrument = false;
-    $scope.$watch('uploadedImage', function(newVal){
-        console.log(newVal);
+    $scope.$watch('uploadedImages', function(newVal){
         if(newVal !== undefined){
-            $scope.holder.image=newVal;
+            if($scope.holder.images.length > 0)
+            {
+                console.log("images is geting added!");
+                $scope.holder.images.concat(newVal);
+            }
+            else
+            {
+
+                $scope.holder.images = newVal;
+            }
+            console.log( $scope.holder.images);
+        }
+        else{
+            $scope.holder.images = [];
         }
     });
     $scope.resizeImage = function ( file ) {

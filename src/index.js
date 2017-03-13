@@ -74,7 +74,8 @@ app.get('/api/cards', function(req,res){
 
 app.post('/api/cards', function(req,res){
     req.body.active = true;
-    req.date_created = Date.now();
+    req.body.date_created = Date.now();
+    req.body.images = [];
     db.collection('cards').insert(req.body, function(err, result){
         if (err) return console.log(err);
 
@@ -85,25 +86,29 @@ app.post('/api/cards', function(req,res){
 app.post('/api/cards/:id/image', function(req, res){
     console.log(req);
     var id = mongo.ObjectID(req.params.id);
-    var imageBody = req.body;
+    var imageBody = req.body[0];
     var image = {};
     image.parent_id = id;
     image.active = true;
     db.collection('images').insert(image, function(err, result){
         var image_id = result.ops[0]._id;
-        db.collection('cards').findOneAndUpdate({"_id":id},{$push :{"images":image_id} }, function(err, updateResult){
+        var imagesRecord = {
+            "id":image_id,
+            "full":'image/' + id + '/' + image_id + '.png'
+        };
+        db.collection('cards').update({"_id":id},{$push :{"images":imagesRecord} }, function(err, updateResult){
             var image_dir = __dirname + "/images/" + id;
             if (!fs.existsSync(image_dir)){
                 fs.mkdirSync(image_dir);
             }
             var imageDir = __dirname + "/images/" + id + "/" + image_id + ".png";
-            var imageBase64 = imageBody.base64 .full.split("base64,")[1];
+            var imageBase64 = imageBody.base64.full.split("base64,")[1];
             var binaryData = new Buffer(imageBase64, 'base64').toString('binary');
 
             fs.writeFile(imageDir, binaryData, "binary", function(err) {
                 console.log("error!");
             });
-            res.json(result);
+            res.json(updateResult);
         });
     });
 });
@@ -145,21 +150,22 @@ app.get('/api/inventory', function(req,res){
 
 app.post('/api/inventory', function(req,res){
     req.body.active = true;
-    req.date_created = Date.now();
-    db.collection('inventory').insert(req.body, function(err, result){
+    req.body.date_created = Date.now();
+    req.body.images = [];
+    db.collection('inventory').insert(req.body, function(err, inventoryResult){
         if (err) return console.log(err);
 
         if(req.body.includeOnHome)
         {
-            var item = result.ops[0];
-            var id = result.ops[0]._id;
+            var item = inventoryResult.ops[0];
+            var id = inventoryResult.ops[0]._id;
             delete item._id;
             item.inventory_id = id;
-            db.collection('cards').insert(item, function(err, result){
+            db.collection('cards').insert(item, function(err, cardResult){
                if (err) return console.log(err);
             });
         }
-        res.json(result);
+        res.json(inventoryResult);
     })
 });
 
@@ -196,7 +202,7 @@ app.post('/api/inventory/:id/image', function(req, res){
             "thumb":'image/' + id + '/thumbs/' + image_id + '.png',
             "full":'image/' + id + '/' + image_id + '.png'
         };
-        db.collection('inventory').findOneAndUpdate({"_id":id},{$push :{"images":imagesRecord} }, function(err, updateResult){
+        db.collection('inventory').update({"_id":id},{$push :{"images":imagesRecord} }, function(err, inventoryResult){
             var image_dir = __dirname + "/images/" + id;
             var thumb_dir = __dirname + "/images/" + id + "/thumbs";
             if (!fs.existsSync(image_dir)){
@@ -220,8 +226,7 @@ app.post('/api/inventory/:id/image', function(req, res){
             fs.writeFile(thumbDir, thumbBinaryData, "binary", function(err) {
                 //console.log(err); // writes out file without error, but it's not a valid image
             });
-            db.collection('cards').findOneAndUpdate({"inventory_id":id},{$push :{"images":imagesRecord} },function(err,updateResult){res.json(result);});
-
+            db.collection('cards').update({"inventory_id":id},{$push :{"images":imagesRecord} },function(err,updateResult){res.json(updateResult);});
         });
 
     });

@@ -11,7 +11,7 @@
     <script src="admin/js/modules.js"></script>
     <script src="admin/lib/lib.js"></script>
 </head>
-<body ng-app="bfAppAdmin"ng-controller="bfController">
+<body ng-app="bfAppAdmin" ng-controller="bfAdminController">
 <md-toolbar layout=row flex layout-align-gt-md="center" layout-align="end center" ng-hide="isHome && $mdMedia('gt-sm')" style="background-image: url('site/img/mobile-header-bg.jpg'); background-repeat: repeat-x;">
     <div class="md-toolbar-tools" ng-hide="$mdMedia('gt-md')">
         <md-button ng-click="toggleLeft()" class="md-fab" ><md-icon class="material-icons">menu</md-icon></md-button>
@@ -20,9 +20,9 @@
         <img src="img/mobile-header.jpg" alt="Purveyors and makers of fine banjos, mandolins and guitars."/>
     </div>
 </md-toolbar>
-<!--<div class="loading" ng-show="loading">
+<div class="loading" ng-show="loading">
     <md-progress-circular class="loader md-accent" md-diameter="140"></md-progress-circular>
-</div>-->
+</div>
 <md-toolbar layout=row flex layout-align="start center" ng-show="isHome && $mdMedia('gt-sm')" class="mainImage" style="background-image: url('site/img/bg/header_background_image_v2.jpg'); background-repeat: repeat-x;">
     <div layout="row" >
         <img src="img/bg/header-bf.jpg" alt="Purveyors and makers of fine banjos, mandolins and guitars."/>

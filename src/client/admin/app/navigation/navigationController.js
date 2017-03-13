@@ -169,21 +169,25 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
+            $scope.$parent.loading = true;
             data.active = true;
             baseService.POST(url, data.card).then(function(res){
                 var cardItem = res.data.ops[0];
                     cardItem.description = $sce.trustAsHtml(res.data.ops[0].description);
                     var imageUrl = url +"/" + res.data.ops[0]._id + "/image";
-                    baseService.POST(imageUrl, data.image).then(function(res){
+                    baseService.POST(imageUrl, data.images).then(function(res){
                         cardItem.image = res.data.ops[0]._id;
                         cardService.cards.push(cardItem);
+                        $scope.$parent.loading = false;
                     });
             },
             function(err){
+                $scope.$parent.loading = false;
                 console.log(err);
             });
         }, function(err)
         {
+            $scope.$parent.loading = false;
             console.log(err);
         })
     };
@@ -195,7 +199,7 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
             fullscreen : true
         }).then(function(data){
             baseService.POST(inventoryUrl, data.item).then(function(res){
-                var imageUrl = inventoryUrl +"/" + res.data.ops[0]._id + "/image";
+                var imageUrl = inventoryUrl +"/" + res.data.ops[0].inventory_id + "/image";
                 res.data.ops[0].description = $sce.trustAsHtml(res.data.ops[0].description);
                 var inventoryItem = res.data.ops[0];
                 inventoryItem.images = [];

@@ -1,4 +1,5 @@
-<md-dialog aria-label="Create Card" flex="75">
+<md-dialog aria-label="Create Card" flex="60">
+    <form ng-cloak>
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>Create Card</h2>
@@ -8,75 +9,64 @@
                 </md-button>
             </div>
         </md-toolbar>
-
-    <md-dialog-content layout="column" layout-padding flex>
-        <h2>Card Details</h2>
-        <div flex="50">
-            <md-divider flex="50"></md-divider>
-            <div ng-show="!editingDescription">
-                <md-input-container>
-                    <label>Select Page</label>
-                    <md-select ng-model="holder.card.page">
-                        <md-option ng-repeat="page in pages" ng-value="page.page" >
-                            {{page.name}}
-                        </md-option>
-                    </md-select>
-                </md-input-container>
-                <md-input-container flex>
-                    <label>Header</label>
-                    <input ng-model="holder.card.header">
-                </md-input-container>
-                <md-input-container layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></md-input-container>
-                <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
-            </div>
-            <div ng-show="editingDescription">
-                <textarea ng-wig="descrip" class="editor1"></textarea>
-                <div layout="row" layout-padding>
-                    <md-button ng-click="saveDescription(descrip)">Save</md-button>
-                    <md-button ng-click="editDescription=false">Close</md-button>
-                </div>
-                <md-divider></md-divider>
-            </div>
-        </div>
-        <md-checkbox ng-model="featureInstrument" ng-if="holder.card.page==='home'">
-            Feature an Instrument
-        </md-checkbox>
-        <div ng-show="featureInstrument" flex>
+        <md-dialog-content layout="column" layout-padding ng-show="!editingDescription">
             <md-input-container flex>
-                <label>Instrument ID</label>
-                <input ng-model="holder.card.instrumentId">
+                <label>Header</label>
+                <input ng-model="holder.card.header">
             </md-input-container>
-        </div>
-        <md-divider></md-divider>
-        <h2>Images</h2>
-        <md-divider flex="50"></md-divider>
-        <div layout="column">
-            <input style="display:inline"
+            <md-input-container>
+                <label>Select Page</label>
+                <md-select ng-model="holder.card.page">
+                    <md-option ng-repeat="page in pages" ng-value="page.page" >
+                        {{page.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <span layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></span>
+            <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
+            <div layout="row" layout-align="start center" layout-margin>
+                <md-checkbox ng-model="holder.card.includeOnHome" ng-if="holder.card.page!=='home'" aria-label="Include on Home Page">
+                    Include on Home Page
+                </md-checkbox>
+                <md-checkbox ng-model="featureInstrument" ng-if="holder.card.page==='home'">
+                    Feature an Instrument
+                </md-checkbox>
+                <div ng-show="!!featureInstrument" flex>
+                    <md-input-container flex>
+                        <label>Instrument ID</label>
+                        <input ng-model="holder.card.instrumentId">
+                    </md-input-container>
+                </div>
+            </div>
+            <md-datepicker ng-show="holder.card.includeOnHome" ng-model="holder.card.expiresOn" md-placeholder="Expires On"></md-datepicker>
+
+            <md-button class="md-primary md-raised" flex="25">
+                <label for="file-input">Choose Image(s)</label>
+            </md-button>
+            <input id="file-input"
                    type='file'
-                   ng-model="uploadedImage"
+                   ng-model="uploadedImages"
                    parser="resizeImage"
                    base-sixty-four-input
                    maxsize="1000"
+                   multiple
+                   ng-show="false"
             >
-            <span>
-                <img ng-src="{{holder.image.base64.full}}" width="300px" max-height="100%"/>
-                <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
-            </span>
-        </div>
-        <div ng-show="holder.card.page==='events'" layout="row">
-            <md-input-container flex="50">
-                <md-datepicker ng-model="holder.card.date" md-placeholder="Event Date"></md-datepicker>
-            </md-input-container>
-            <md-input-container flex="50">
-                <label>URL</label>
-                <input ng-model="holder.card.url">
-            </md-input-container>
-        </div>
-        <md-checkbox ng-model="card.includeOnHome" ng-if="card.page!=='home'" aria-label="Checkbox 1">
-            Include on Home Page
-        </md-checkbox>
-    </md-dialog-content>
-
+            <div ng-show="holder.images.length > 0" layout="row" layout-padding class="scroll-wrapper" >
+                <div class="scrolls">
+                <span ng-repeat="image in holder.images">
+                    <img ng-src="{{image.base64.full}}" width="150px" max-height="100%"/>
+                    <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
+                </span>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-content ng-show="editingDescription">
+            <textarea ng-wig="descrip" class="editor1"></textarea>
+            <div layout="row" layout-padding layout-align="end">
+                <md-button ng-click="saveDescription(descrip)">Save</md-button>
+            </div>
+        </md-dialog-content>
     <md-dialog-actions layout="row">
         <md-button ng-click="submit(holder)">
             Create

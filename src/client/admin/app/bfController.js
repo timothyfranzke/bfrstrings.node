@@ -1,4 +1,4 @@
-bfAppAdmin.controller('bfController', function($scope, $mdMedia, $mdSidenav, $state, inventoryService, inventoryModel, eventService, eventModel){
+bfAppAdmin.controller('bfAdminController', function($scope, $mdMedia, $mdSidenav, $state, inventoryService, inventoryModel, eventService, eventModel){
     $scope.$mdMedia = $mdMedia;
     $scope.loading = false;
     $scope.$on('$stateChangeSuccess',
