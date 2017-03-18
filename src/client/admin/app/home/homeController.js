@@ -1,4 +1,4 @@
-bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, baseService, inventoryService, cardService){
+bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, $mdDialog, baseService, inventoryService, cardService){
     $scope.config = {};
     $scope.cards = [];
     $scope.$mdMedia = $mdMedia;
@@ -18,8 +18,15 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
             $scope.cards = cardService.cards;
         });
     $scope.deleteCard = function(index){
-        baseService.DELETE(request.url,cardService.cards[index]._id).then(function(res){
-            cardService.cards.splice(index,1);
-        })
+        $mdDialog.show({
+            controller:'confirmDialogController',
+            templateUrl: 'app/dialogs/confirmDialog.html',
+            clickOutsideToClose: true,
+            fullscreen : false
+        }).then(function() {
+            baseService.DELETE(request.url, cardService.cards[index]._id).then(function (res) {
+                cardService.cards.splice(index, 1);
+            })
+        });
     }
 });

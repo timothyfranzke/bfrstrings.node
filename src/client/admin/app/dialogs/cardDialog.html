@@ -22,24 +22,38 @@
                     </md-option>
                 </md-select>
             </md-input-container>
+            <md-input-container flex>
+                <label>Video ID</label>
+                <input ng-model="holder.card.videoId">
+            </md-input-container>
             <span layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></span>
             <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
             <div layout="row" layout-align="start center" layout-margin>
                 <md-checkbox ng-model="holder.card.includeOnHome" ng-if="holder.card.page!=='home'" aria-label="Include on Home Page">
                     Include on Home Page
                 </md-checkbox>
-                <md-checkbox ng-model="featureInstrument" ng-if="holder.card.page==='home'">
+                <md-checkbox ng-model="is.featuredInstrument" ng-if="holder.card.page==='home'" aria-label="Feature Instrument">
                     Feature an Instrument
                 </md-checkbox>
-                <div ng-show="!!featureInstrument" flex>
+                <div ng-show="is.featuredInstrument" flex>
                     <md-input-container flex>
                         <label>Instrument ID</label>
                         <input ng-model="holder.card.instrumentId">
                     </md-input-container>
                 </div>
             </div>
-            <md-datepicker ng-show="holder.card.includeOnHome" ng-model="holder.card.expiresOn" md-placeholder="Expires On"></md-datepicker>
-
+            <md-datepicker ng-show="holder.card.includeOnHome || holder.card.page === 'home'" ng-model="holder.card.expiresOn" md-placeholder="Expires On"></md-datepicker>
+            <div ng-show="holder.card.page === 'events'" layout-align="start center">
+                <md-input-container flex>
+                    <label>Event URL</label>
+                    <input ng-model="holder.card.url">
+                </md-input-container>
+                <md-datepicker ng-model="holder.card.date" md-placeholder="Event Date"></md-datepicker>
+                <md-input-container flex>
+                    <label>Event Time</label>
+                    <input ng-model="holder.card.time" placeholder="hh:mm AM/PM">
+                </md-input-container>
+            </div>
             <md-button class="md-primary md-raised" flex="25">
                 <label for="file-input">Choose Image(s)</label>
             </md-button>

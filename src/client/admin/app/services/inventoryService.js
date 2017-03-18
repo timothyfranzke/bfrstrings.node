@@ -6,7 +6,7 @@ bfAppAdmin.factory('inventoryService', function ($http, $q, $sce, inventoryModel
             var time = new Date();
             var defer = $q.defer();
             var request = {
-                url: 'api/inventory',
+                url: '/api/inventory',
                 //url: 'inventory/banjos.json',
                 method: 'GET'
             };
@@ -35,7 +35,7 @@ bfAppAdmin.factory('inventoryService', function ($http, $q, $sce, inventoryModel
             var defer = $q.defer();
             var item = {};
             var request = {
-                url: 'api/inventory/' + id,
+                url: '/api/inventory/' + id,
                 method: 'GET'
             };
             $http(request)
@@ -59,7 +59,7 @@ bfAppAdmin.factory('inventoryService', function ($http, $q, $sce, inventoryModel
             var defer = $q.defer();
             //var item = {};
             var request = {
-                url: 'api/inventory',
+                url: '/api/inventory',
                 method: 'PUT',
                 data: JSON.stringify(item),
                 headers: {

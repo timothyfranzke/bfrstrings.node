@@ -1,7 +1,7 @@
-bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidenav, $timeout, $mdDialog, $sce,baseService, cardService, inventoryService, instrumentService, inventoryModel){
+bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidenav, $timeout, $mdDialog, $sce,baseService, cardService, loadingService, inventoryService, instrumentService, inventoryModel){
     var url = '/api/cards';
     var inventoryUrl = '/api/inventory';
-
+    $scope.isLoading = false;
     $scope.showInventory = true;
     function debounce(func, wait, context) {
         var timer;
@@ -165,54 +165,74 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
     $scope.addCard = function(type){
         $mdDialog.show({
             controller:'cardDialogController',
-            templateUrl: 'admin/app/dialogs/cardDialog.html',
+            templateUrl: 'app/dialogs/cardDialog.html',
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
-            $scope.$parent.loading = true;
+
+            $scope.isLoading = true;
             data.active = true;
             baseService.POST(url, data.card).then(function(res){
                 var cardItem = res.data.ops[0];
                     cardItem.description = $sce.trustAsHtml(res.data.ops[0].description);
-                    var imageUrl = url +"/" + res.data.ops[0]._id + "/image";
-                    baseService.POST(imageUrl, data.images).then(function(res){
-                        cardItem.image = res.data.ops[0]._id;
-                        cardService.cards.push(cardItem);
-                        $scope.$parent.loading = false;
-                    });
+                    if (data.images.length > 0)
+                    {
+                        var imageUrl = url +"/" + res.data.ops[0]._id + "/image";
+                        baseService.POST(imageUrl, data.images).then(function(res){
+                            cardService.cards.push(cardItem);
+                            $scope.isLoading = false;
+                        });
+                    }
+                    $scope.isLoading = false;
             },
             function(err){
-                $scope.$parent.loading = false;
+                $scope.isLoading = false;
                 console.log(err);
             });
         }, function(err)
         {
-            $scope.$parent.loading = false;
+            $scope.isLoading = false;
             console.log(err);
         })
     };
     $scope.addInstrument = function(type){
         $mdDialog.show({
+            locals:{inventoryItem:{}},
             controller:'inventoryDialogController',
-            templateUrl: 'admin/app/dialogs/inventoryDialog.html',
+            templateUrl: 'app/dialogs/inventoryDialog.html',
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
+            $scope.isLoading = true;
             baseService.POST(inventoryUrl, data.item).then(function(res){
-                var imageUrl = inventoryUrl +"/" + res.data.ops[0].inventory_id + "/image";
+
+                var resultId = res.data.ops[0]._id;
+                if(res.data.ops[0].inventory_id !== undefined)
+                {
+                    resultId = res.data.ops[0].inventory_id;
+                }
+                var imageUrl = inventoryUrl +"/" + resultId + "/image";
                 res.data.ops[0].description = $sce.trustAsHtml(res.data.ops[0].description);
                 var inventoryItem = res.data.ops[0];
                 inventoryItem.images = [];
+                var numberOfImages = data.images.length;
+                console.log("Num images: " + numberOfImages);
+                var i = 1;
                 data.images.forEach(function(image){
                     baseService.POST(imageUrl, image).then(function(res){
-                       inventoryItem.images.push(res.data.ops[0]._id);
+                        i++;
+                       if(i==numberOfImages){
+                           $scope.isLoading = false;
+                       }
                     });
                 });
                 inventoryModel.inventory.push(inventoryItem);
             })
         }, function(err)
         {
+            $scope.isLoading = false;
             console.log(err);
         })
     };
+
 });

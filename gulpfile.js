@@ -145,7 +145,12 @@ gulp.task('app', function(){
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('build', ['clean', 'html', 'modules', 'server', 'app', 'lib', 'css', 'img', 'config'], function(){
+gulp.task('packages', function () {
+    gulp.src('package.json')
+        .pipe(gulp.dest('dist'))
+});
+
+gulp.task('build', ['clean', 'html', 'modules', 'server', 'app', 'lib', 'css', 'img', 'config', 'packages'], function(){
     if(server){
         server.stop();
     }
@@ -160,23 +165,7 @@ gulp.task('build', ['clean', 'html', 'modules', 'server', 'app', 'lib', 'css', '
 gulp.task('full-build', ['build', 'bowerjs', 'bowercss']);
 
 gulp.task('webserver', function() {
-    /*    gulp.src('dist')
-     .pipe(plugins.webserver({
-     livereload:true,
-     directoryListing:false,
-     open:true,
-     port:8023,
-     path:'./dist'
-     })
-     );*/
-
     return server.start();
-/*    connect.server({
-        root: ['dist'],
-        port: 8000,
-        base: 'http://localhost',
-        livereload: true
-    })*/
 });
 
 gulp.task('default', function(){

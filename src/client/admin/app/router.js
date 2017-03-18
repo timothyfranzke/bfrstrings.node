@@ -10,36 +10,36 @@ bfAppAdmin.config(function($urlRouterProvider, $stateProvider, $locationProvider
         })
         .state('home', {
             url: '/',
-            templateUrl: 'admin/app/home/home.html',
+            templateUrl: 'app/home/home.html',
             controller:'homeController'
         })
         .state('about', {
             url:'/about',
-            templateUrl:'admin/app/about/about.html'
+            templateUrl:'app/about/about.html'
         })
         .state('contact', {
             url:'/contact',
-            templateUrl:'admin/app/contact/contact.html',
+            templateUrl:'app/contact/contact.html',
             controller:'contactController'
         })
         .state('events', {
             url: '/events',
-            templateUrl: 'admin/app/events/events.html',
+            templateUrl: 'app/events/events.html',
             controller: 'eventsController'
         })
         .state('repairShop', {
             url: '/repairShop',
-            templateUrl: 'admin/app/repairShop/repairShop.html',
+            templateUrl: 'app/repairShop/repairShop.html',
             controller: 'repairShopController'
         })
         .state('ourBrand', {
             url: '/ourBrand',
-            templateUrl: 'admin/app/ourBrand/ourBrand.html',
+            templateUrl: 'app/ourBrand/ourBrand.html',
             controller: 'ourBrandController'
         })
         .state('inventory', {
             url: '/inventory',
-            templateUrl: 'admin/app/inventory/inventory.html',
+            templateUrl: 'app/inventory/inventory.html',
             controller: 'inventoryController'
         })
         .state('inventoryItem', {

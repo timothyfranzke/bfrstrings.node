@@ -11,36 +11,18 @@ var db;
 
 app.use(bodyparser.json({limit: '50mb'}));
 app.use(fileUpload());
+app.use("/", express.static(__dirname + '/public/site'));
+app.use("/admin", express.static(__dirname + '/public/admin'));
 app.use("/image", express.static(__dirname + '/images'));
-app.use("/css", express.static(__dirname + '/public/site/css'));
-app.use("/app", express.static(__dirname + '/public/site/app'));
-app.use("/img", express.static(__dirname + '/public/site/img'));
-app.use("/js", express.static(__dirname + '/public/site/js'));
-app.use("/lib", express.static(__dirname + '/public/site/lib'));
-app.use("/configuration", express.static(__dirname + '/public/site/configuration' ));
+app.use("/admin/image", express.static(__dirname + '/images'));
 
-app.use("/admin/css", express.static(__dirname + '/public/admin/css'));
-app.use("/admin/app", express.static(__dirname + '/public/admin/app'));
-app.use("/admin/img", express.static(__dirname + '/public/admin/img'));
-app.use("/admin/js", express.static(__dirname + '/public/admin/js'));
-app.use("/admin/lib", express.static(__dirname + '/public/admin/lib'));
-mongoClient.connect('mongodb://localhost:27017/bfstrings', function(err, database){
+mongoClient.connect('mongodb://bfstrings:hawthornuser@ds131340.mlab.com:31340/bfstrings', function(err, database){
     if (err) return console.log(err);
     db = database;
 
-    app.listen(3000, function(){
-        console.log('listening on port 3000');
-
+    app.listen(process.env.PORT || 3000, function(){
+        console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     });
-});
-
-
-
-app.get('/', function(req,res){
-    res.sendFile(__dirname + '/public/site/')
-});
-app.get('/admin', function(req,res){
-    res.sendFile(__dirname + '/public/admin/')
 });
 
 app.get('/:uid', function(req,res){
@@ -65,7 +47,13 @@ app.get('/api/events', function(req,res){
 });
 
 app.get('/api/cards', function(req,res){
-   db.collection('cards').find({"active":true}).toArray(function(err,result){
+   db.collection('cards').find({"active":true,
+       $or:
+           [
+               {expiresOn: null},
+               {expiresOn: {$gte: new Date()}}
+        ]
+        }).toArray(function(err,result){
        if (err) return console.log(err);
 
        res.json(result);
@@ -76,11 +64,33 @@ app.post('/api/cards', function(req,res){
     req.body.active = true;
     req.body.date_created = Date.now();
     req.body.images = [];
-    db.collection('cards').insert(req.body, function(err, result){
-        if (err) return console.log(err);
+    if (!!req.body.expiresOn)
+    {
+        req.body.expiresOn = new Date(req.body.expiresOn);
+    }
+    if(!!req.body.instrumentId)
+    {
+        console.log(req.body);
+        var id = mongo.ObjectID(req.body.instrumentId);
+        db.collection('inventory').findOne({"_id":id}, function(err, result){
+            delete result._id;
+            result.inventory_id = id;
+            result.includeOnHome = true;
+            result.expiresOn = req.body.expiresOn;
 
-        res.json(result);
-    })
+            db.collection('cards').insert(result, function(err, cardResult){
+                res.json(cardResult);
+            })
+        })
+    }
+    else
+    {
+        db.collection('cards').insert(req.body, function(err, result){
+            if (err) return console.log(err);
+
+            res.json(result);
+        })
+    }
 });
 
 app.post('/api/cards/:id/image', function(req, res){
@@ -228,7 +238,6 @@ app.post('/api/inventory/:id/image', function(req, res){
             });
             db.collection('cards').update({"inventory_id":id},{$push :{"images":imagesRecord} },function(err,updateResult){res.json(updateResult);});
         });
-
     });
 });
 

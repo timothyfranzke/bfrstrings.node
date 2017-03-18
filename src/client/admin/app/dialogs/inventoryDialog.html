@@ -2,8 +2,8 @@
     <form ng-cloak>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2 ng-show="!inventoryItem._id">Update {{inventoryItem.name}}</h2>
-                <h2 ng-show="!!inventoryItem._id">Create Inventory</h2>
+                <h2 ng-show="!!inventoryItem.item._id">Update {{inventoryItem.item.name}}</h2>
+                <h2 ng-show="!inventoryItem.item._id">Create Inventory</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <md-icon class="material-icons">close</md-icon>
@@ -18,6 +18,10 @@
             <md-input-container flex="50">
                 <label>Price</label>
                 <input ng-model="inventoryItem.item.price">
+            </md-input-container>
+            <md-input-container flex="50">
+                <label>Video ID</label>
+                <input ng-model="inventoryItem.item.videoId">
             </md-input-container>
             <md-input-container>
                 <label><em>select instrument type</em></label>
@@ -47,11 +51,15 @@
                    multiple
                    ng-show="false"
             >
-            <div ng-show="inventoryItem.images.length > 0" layout="row" layout-padding class="scroll-wrapper" >
+            <div ng-show="inventoryItem.images.length > 0 || inventoryItem.item.images.length" layout="row" layout-padding class="scroll-wrapper" >
                 <div class="scrolls">
                 <span ng-repeat="image in inventoryItem.images">
                     <img ng-src="{{image.base64.thumb}}" width="150px" max-height="100%"/>
                     <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
+                </span>
+                    <span ng-repeat="image in inventoryItem.item.images">
+                    <img ng-src="{{image.thumb}}" width="150px" max-height="100%"/>
+                    <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="updateRemoveImage($index)">close</md-button>
                 </span>
                 </div>
             </div>
@@ -65,8 +73,11 @@
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
-            <md-button ng-click="submit(inventoryItem)">
-                Create
+            <md-button ng-click="submit(inventoryItem)" ng-show="!inventoryItem.item._id">
+                CREATE
+            </md-button>
+            <md-button ng-click="submit(inventoryItem)" ng-show="!!inventoryItem.item._id">
+                UPDATE
             </md-button>
         </md-dialog-actions>
     </form>

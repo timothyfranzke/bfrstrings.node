@@ -2,6 +2,8 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
     $scope.holder = {};
     $scope.holder.card = {};
     $scope.holder.image = {};
+    $scope.is = {};
+    $scope.is.featuredInstrument = false;
     $scope.pages = [
         {
             "name":"Events",
@@ -21,7 +23,7 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
         }
     ];
     $scope.editingDescription = false;
-    $scope.featureInstrument = false;
+    $scope.isFeaturedInstrument = false;
     $scope.$watch('uploadedImages', function(newVal){
         if(newVal !== undefined){
             if($scope.holder.images.length > 0)
@@ -34,7 +36,7 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
 
                 $scope.holder.images = newVal;
             }
-            console.log( $scope.holder.images);
+            console.log( newVal);
         }
         else{
             $scope.holder.images = [];
@@ -48,16 +50,22 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
 
         var img = document.createElement("img");
         var reader = new FileReader();
+        var i = new Image();
         reader.onload = function(e) {
             // resize the picture
-            img.src = e.target.result;
 
+
+            i.src = e.target.result;
+
+        };
+        i.onload = function(){
+            console.log(img);
             var canvas = document.createElement("canvas");
 
             var MAX_WIDTH = 500;
             var MAX_HEIGHT = 500;
-            var width = img.width;
-            var height = img.height;
+            var width = i.width;
+            var height = i.height;
 
             if (width > height) {
                 if (width > MAX_WIDTH) {
@@ -74,10 +82,12 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
             canvas.width = width;
             canvas.height = height;
             var ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, width, height);
+            ctx.drawImage(i, 0, 0, width, height);
 
+            console.log("width" + width + " " + "height" + height);
+            console.log(canvas);
             images.base64 = {};
-            images.base64.full = canvas.toDataURL("image/png");
+            images.base64.full = i.src;
 
             deferred.resolve(images);
         };
@@ -86,6 +96,10 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
         return deferred.promise;
 
     };
+    $scope.$watch('isFeaturedInstrument', function(newVal)
+    {
+
+    });
 
     $scope.holder.card.includeOnHome = false;
     $scope.holder.card.page = $scope.pages[1];

@@ -27,7 +27,7 @@
                 </md-card-title-media>
             </md-card-title>
             <md-card-actions layout="row" layout-align="end center">
-
+                <md-button ng-click="editInstrument(item)">EDIT</md-button>
                 <md-button ng-click="deleteCard(item._id, $index)">DELETE</md-button>
             </md-card-actions>
         </md-card>
@@ -44,3 +44,6 @@
                     </div>-->
     </md-grid-tile>
 </md-grid-list>
+<div class="loading" ng-show="isLoading">
+    <md-progress-circular class="loader md-accent" md-diameter="140"></md-progress-circular>
+</div>

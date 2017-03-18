@@ -1,9 +1,16 @@
-bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $scope, $q){
+bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $scope, $q, inventoryItem){
     $scope.inventoryItem = {};
     $scope.inventoryItem._id = -1;
     $scope.inventoryItem.item = {};
     $scope.inventoryItem.images = [];
     $scope.editingDescription = false;
+    console.log(inventoryItem);
+    if(!!inventoryItem)
+    {
+        $scope.inventoryItem.item = inventoryItem;
+        $scope.descriptionDisplay = $sce.trustAsHtml($scope.inventoryItem.item.description);
+    }
+
     $scope.showEditDesciption = function(){
         $scope.editDescription = true;
     };
@@ -23,6 +30,9 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
     };
     $scope.removeImage = function(index){
         $scope.inventoryItem.images.splice(index,1);
+    };
+    $scope.updateRemoveImage =function(index){
+        $scope.inventoryItem.item.images.splice(index,1);
     };
 
     $scope.$watch('uploadedImages', function(newVal){
@@ -44,22 +54,26 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
 
         var img = document.createElement("img");
         var reader = new FileReader();
+        var i = new Image();
         reader.onload = function(e) {
             // resize the picture
-            img.src = e.target.result;
+            i.src = e.target.result;
 
+
+        };
+        i.onload = function(){
             var canvas = document.createElement("canvas");
             var thumbCanvas = document.createElement("canvas");
 
             var MAX_WIDTH = 300;
             var MAX_HEIGHT = 300;
-            var width = img.width;
-            var height = img.height;
+            var width = i.width;
+            var height = i.height;
 
             var THUMB_MAX_WIDTH = 150;
             var THUMB_MAX_HEIGHT = 150;
-            var thumbWidth = img.width;
-            var thumbHeight = img.height;
+            var thumbWidth = i.width;
+            var thumbHeight = i.height;
 
             if (width > height) {
                 if (width > MAX_WIDTH) {
@@ -83,15 +97,15 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
                     thumbHeight = THUMB_MAX_HEIGHT;
                 }
             }
-            canvas.width = img.width;
-            canvas.height = img.height;
+            canvas.width = width;
+            canvas.height = height;
             var ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, img.width, img.height);
+            ctx.drawImage(i, 0, 0, width, height);
 
             thumbCanvas.width = thumbWidth;
             thumbCanvas.height = thumbHeight;
             var thumbCtx = thumbCanvas.getContext("2d");
-            thumbCtx.drawImage(img, 0, 0, thumbWidth, thumbHeight);
+            thumbCtx.drawImage(i, 0, 0, thumbWidth, thumbHeight);
 
             images.base64 = {};
             images.base64.full = canvas.toDataURL("image/png");
@@ -103,7 +117,7 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
 
         return deferred.promise;
 
-    }
+    };
    $scope.submit = function(item){
       $mdDialog.hide(item)
    };

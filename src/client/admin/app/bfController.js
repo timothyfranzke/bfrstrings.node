@@ -1,6 +1,9 @@
-bfAppAdmin.controller('bfAdminController', function($scope, $mdMedia, $mdSidenav, $state, inventoryService, inventoryModel, eventService, eventModel){
+bfAppAdmin.controller('bfAdminController', function($scope, $mdMedia, $mdSidenav, $state, inventoryService, inventoryModel, loadingService, eventModel){
     $scope.$mdMedia = $mdMedia;
-    $scope.loading = false;
+    $scope.isLoading = loadingService.loading;
+    $scope.$watch('loading', function(newVal){
+       console.log("loading changed: " + newVal);
+    });
     $scope.$on('$stateChangeSuccess',
         function(event, toState, toParams, fromState, fromParams) {
             window.scrollTo(0,0);
@@ -26,7 +29,9 @@ bfAppAdmin.controller('bfAdminController', function($scope, $mdMedia, $mdSidenav
                 item.sold = false;
             }
         });
+
         inventoryModel.inventory = data;
+        console.log(inventoryModel);
         $scope.loading = false;
     });
     function debounce(func, wait, context) {

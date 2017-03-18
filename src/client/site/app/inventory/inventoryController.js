@@ -6,7 +6,6 @@ bfApp.controller('inventoryController', function($scope, inventoryService, instr
     $scope.$mdMedia = $mdMedia;
     $scope.items = inventoryModel.inventory;
 
-    console.log($scope.items);
     if (inventoryModel.length == 0)
     {
         inventoryService.getInventory().then(function(data){
@@ -35,11 +34,6 @@ bfApp.controller('inventoryController', function($scope, inventoryService, instr
         })
 
     };
-
-
-
-
-
 
     //alert(JSON.stringify($state.current));
     switch($state.current.name)

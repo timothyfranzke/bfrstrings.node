@@ -1,4 +1,4 @@
-var bfApp = angular.module('bfApp', ['ui.router', 'ngMaterial', 'ngCookies', 'angular-fotorama', 'ngWig', 'ngMessages']);
+var bfApp = angular.module('bfApp', ['ui.router', 'ngMaterial', 'ngCookies', 'ap.fotorama', 'ngWig', 'ngMessages']);
 bfApp.config(function($mdThemingProvider) {
     $mdThemingProvider.definePalette('bfstringsYellow', {
         '50': '#F5BA42',

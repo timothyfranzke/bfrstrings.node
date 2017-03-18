@@ -4,11 +4,11 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
     $scope.selectedInventory = "";
     $scope.selectedIndex = 0;
     $scope.$mdMedia = $mdMedia;
-    $scope.items = inventoryModel.inventory;
+    $scope.isLoading = false;
+
     var url = '/api/inventory';
 
-    if (inventoryModel.length == 0)
-    {
+
         inventoryService.getInventory().then(function(data){
             data.forEach(function(item){
                 item.visible = true;
@@ -20,8 +20,8 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
                 }
             });
             inventoryModel.inventory = data;
+            $scope.items = inventoryModel.inventory;
         });
-    }
 
     var filterInventory = function(index){
         $scope.items.forEach(function(item){
@@ -68,8 +68,37 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
     }
 
 
-    $scope.editInventory = function(){
+    $scope.editInstrument = function(item, index){
+        item.expiresOn = new Date(item.expiresOn);
+        $mdDialog.show({
+            locals:{inventoryItem:item},
+            controller:'inventoryDialogController',
+            templateUrl: 'app/dialogs/inventoryDialog.html',
+            clickOutsideToClose: true,
+            fullscreen : true
+        }).then(function(data){
+            $scope.isLoading = true;
+            baseService.PUT(url, data.item._id, data.item).then(function(res){
+                var i = 1;
+                var numberOfImages = data.images.length;
+                var imageUrl = url +"/" + data.item._id + "/image";
+                data.images.forEach(function(image){
+                    baseService.POST(imageUrl, image).then(function(res){
+                        i++;
+                        if(i==numberOfImages){
+                            $scope.isLoading = false;
+                        }
+                    });
+                });
+                $scope.items[index] = res.data.value;
+                $scope.isLoading = false;
 
+            })
+        }, function(err)
+        {
+            $scope.isLoading = false;
+            console.log(err);
+        })
     };
     $scope.deleteInventory = function(){
 
@@ -83,9 +112,16 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
         state.go('inventoryItem', { id: id });
     };
     $scope.deleteCard = function(id,index){
-        baseService.DELETE(url,id).then(function(res){
-            inventoryModel.inventory.splice(index,1);
-        })
+        $mdDialog.show({
+            controller:'confirmDialogController',
+            templateUrl: 'app/dialogs/confirmDialog.html',
+            clickOutsideToClose: true,
+            fullscreen : true
+        }).then(function(){
+                baseService.DELETE(url,id).then(function(res){
+                    inventoryModel.inventory.splice(index,1);
+                })
+            })
     }
 
 });

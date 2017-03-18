@@ -25,7 +25,7 @@
             </md-button>
         </md-card-actions>
     </md-card>
-<div layout="column" layout-padding ng-if="$mdMedia('gt-md')" flex="30">
+<div layout="column" layout-padding ng-if="$mdMedia('gt-md') || false" flex="30">
     <span class="md-subheader">Recently Viewed</span>
         <md-card ng-repeat="rvItem in recentlyViewed">
             <md-card-title>

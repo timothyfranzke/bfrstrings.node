@@ -3,6 +3,7 @@ bfApp.controller('homeController', function($scope, $http, $sce, $mdMedia, baseS
     var config = {};
     var pages = [];
     $scope.cards = [];
+    $scope.today = new Date();
     var convertDate = function(date){
         var dateSplit = date.split(' ');
         var day = dateSplit[0].split('-');
@@ -21,6 +22,11 @@ bfApp.controller('homeController', function($scope, $http, $sce, $mdMedia, baseS
                 if(card.description !== undefined)
                 {
                     card.description = $sce.trustAsHtml(card.description);
+                }
+                if(card.videoId !== undefined)
+                {
+                    var url = "https://www.youtube.com/embed/" + card.videoId;
+                    card.url = $sce.trustAsResourceUrl(url);
                 }
             });
             cardService.cards = res.data;

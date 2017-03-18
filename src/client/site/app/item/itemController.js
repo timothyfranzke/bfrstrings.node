@@ -97,6 +97,11 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
             $scope.item = data;
             $scope.images = data.images;
             $scope.description = $sce.trustAsHtml($scope.item.description);
+            if($scope.item.videoId !== undefined)
+            {
+                var url = "https://www.youtube.com/embed/" + $scope.item.videoId;
+                $scope.item.url = $sce.trustAsResourceUrl(url);
+            }
 
             //$scope.item.type ="Banjo";
             if ($cookies.get("itemTwo") !== undefined)
@@ -115,6 +120,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
                 $scope.recentlyViewed.push($cookies.getObject("itemOne"));
             }
             $cookies.putObject("current", $scope.item);
+            console.log($scope.recentlyViewed);
             //$('.fotorama').fotorama();
         });
 
