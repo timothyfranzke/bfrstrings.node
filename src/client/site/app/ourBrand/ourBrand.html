@@ -19,7 +19,7 @@
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.images[0].full}}" />
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -40,7 +40,7 @@
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.images[0].full}}" />
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
                 </div>
             </md-card-title-media>
         </div>

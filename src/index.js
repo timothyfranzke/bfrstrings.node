@@ -64,6 +64,13 @@ app.post('/api/cards', function(req,res){
     req.body.active = true;
     req.body.date_created = Date.now();
     req.body.images = [];
+    if (!!req.body.number_of_images)
+    {
+        for(var i = 1; i <= req.body.number_of_images; i++)
+        {
+            req.body.images.push(i);
+        }
+    }
     if (!!req.body.expiresOn)
     {
         req.body.expiresOn = new Date(req.body.expiresOn);

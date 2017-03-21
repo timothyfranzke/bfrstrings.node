@@ -5,6 +5,7 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
     $scope.selectedIndex = 0;
     $scope.$mdMedia = $mdMedia;
     $scope.isLoading = false;
+    var imageUrl = "http://www.franzkedesigner.com/bfstrings_images/CreateImageService.php";
 
     var url = '/api/inventory';
 
@@ -77,19 +78,30 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
+            var numberOfImages = data.images.length;
+            data.item.added_images = numberOfImages;
             $scope.isLoading = true;
             baseService.PUT(url, data.item._id, data.item).then(function(res){
+                var max_id = 0;
+                if(!!data.item.images)
+                {
+                    max_id = data.item.images[data.item.images - 1]
+                }
                 var i = 1;
-                var numberOfImages = data.images.length;
-                var imageUrl = url +"/" + data.item._id + "/image";
+                var id = max_id + 1;
                 data.images.forEach(function(image){
-                    baseService.POST(imageUrl, image).then(function(res){
+                    var imageData = image.base64;
+                    imageData.id = data.item._id;
+                    imageData.imageId = id;
+                    id++;
+                    baseService.POST(imageUrl, imageData).then(function(res){
                         i++;
                         if(i==numberOfImages){
                             $scope.isLoading = false;
                         }
                     });
                 });
+
                 $scope.items[index] = res.data.value;
                 $scope.isLoading = false;
 
@@ -99,9 +111,6 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
             $scope.isLoading = false;
             console.log(err);
         })
-    };
-    $scope.deleteInventory = function(){
-
     };
     $scope.getNumber = function(num) {
         alert(num);

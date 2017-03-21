@@ -22,7 +22,7 @@
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.images[0].full}}" />
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -35,7 +35,7 @@
                 </md-card-content>
             </div>
         </div>
-        <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="30" flex >
+        <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="40" flex >
             <md-card-title-media ng-show="!!page.videoId">
                 <iframe width="420" height="315"
                         ng-src="{{page.url}}">
@@ -43,7 +43,7 @@
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.images[0].full}}" />
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
                 </div>
             </md-card-title-media>
         </div>

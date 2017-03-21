@@ -1,6 +1,7 @@
 bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidenav, $timeout, $mdDialog, $sce,baseService, cardService, loadingService, inventoryService, instrumentService, inventoryModel){
     var url = '/api/cards';
     var inventoryUrl = '/api/inventory';
+    var imageUrl = "http://www.franzkedesigner.com/bfstrings_images/CreateImageService.php";
     $scope.isLoading = false;
     $scope.showInventory = true;
     function debounce(func, wait, context) {
@@ -172,15 +173,26 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
 
             $scope.isLoading = true;
             data.active = true;
+            var numberOfImages = data.images.length;
+            data.card.number_of_images = numberOfImages;
             baseService.POST(url, data.card).then(function(res){
-                var cardItem = res.data.ops[0];
+                    var resultId = res.data.ops[0]._id;
+                    var cardItem = res.data.ops[0];
+                    var id = 1;
                     cardItem.description = $sce.trustAsHtml(res.data.ops[0].description);
                     if (data.images.length > 0)
                     {
-                        var imageUrl = url +"/" + res.data.ops[0]._id + "/image";
-                        baseService.POST(imageUrl, data.images).then(function(res){
-                            cardService.cards.push(cardItem);
-                            $scope.isLoading = false;
+                        data.images.forEach(function(image){
+                            var imageData = image.base64;
+                            imageData.id = resultId;
+                            imageData.imageId = id;
+                            id++;
+                            baseService.POST(imageUrl, imageData).then(function(res){
+                                i++;
+                                if(i==numberOfImages){
+                                    $scope.isLoading = false;
+                                }
+                            });
                         });
                     }
                     $scope.isLoading = false;
@@ -212,7 +224,7 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
                 {
                     resultId = res.data.ops[0].inventory_id;
                 }
-                var imageUrl = "http://www.franzkedesigner.com/bfstrings_images/CreateImageService.php";
+
                 res.data.ops[0].description = $sce.trustAsHtml(res.data.ops[0].description);
                 var inventoryItem = res.data.ops[0];
                 inventoryItem.images = [];

@@ -20,7 +20,7 @@
             </div>
             <md-card-title-media ng-show="page.type !== 'card' && !!page.img">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.images[0].full}}" />
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -39,7 +39,7 @@
             </div>
             <md-card-title-media ng-show="page.type !== 'card' && !!page.img">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.img}}" />
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
                 </div>
             </md-card-title-media>
         </div>
