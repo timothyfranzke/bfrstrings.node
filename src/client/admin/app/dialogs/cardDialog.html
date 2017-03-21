@@ -10,22 +10,45 @@
             </div>
         </md-toolbar>
         <md-dialog-content layout="column" layout-padding ng-show="!editingDescription">
-            <md-input-container flex>
-                <label>Header</label>
-                <input ng-model="holder.card.header">
-            </md-input-container>
-            <md-input-container>
-                <label>Select Page</label>
-                <md-select ng-model="holder.card.page">
-                    <md-option ng-repeat="page in pages" ng-value="page.page" >
-                        {{page.name}}
-                    </md-option>
-                </md-select>
-            </md-input-container>
-            <md-input-container flex>
-                <label>Video ID</label>
-                <input ng-model="holder.card.videoId">
-            </md-input-container>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>Header</label>
+                    <input ng-model="holder.card.header">
+                </md-input-container>
+                <label style="color:red" ng-show="(holder.card.header.$touched"><em>Required *</em></label>
+            </div>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>Select Page</label>
+                    <md-select ng-model="holder.card.page">
+                        <md-option ng-repeat="page in pages" ng-value="page.page" >
+                            {{page.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <label style="color:red" ng-show="holder.card.page"><em>Required *</em></label>
+            </div>
+            <div layout="row">
+                <md-datepicker ng-model="holder.card.date" md-placeholder="Event Date" flex="50"></md-datepicker>
+            </div>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>Event Time (hh:mm AM/PM)</label>
+                    <input ng-model="holder.card.time">
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>YouTube Video ID</label>
+                    <input ng-model="holder.card.videoId">
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>URL</label>
+                    <input ng-model="holder.card.url">
+                </md-input-container>
+            </div>
             <span layout="row" layout-align="start center"> Description <md-button class="material-icons" ng-click="editDescription()">edit</md-button></span>
             <p ng-show="!!descriptionDisplay">{{descriptionDisplay}}</p>
             <div layout="row" layout-align="start center" layout-margin>
@@ -42,18 +65,7 @@
                     </md-input-container>
                 </div>
             </div>
-            <md-datepicker ng-show="holder.card.includeOnHome || holder.card.page === 'home'" ng-model="holder.card.expiresOn" md-placeholder="Expires On"></md-datepicker>
-            <div ng-show="holder.card.page === 'events'" layout-align="start center">
-                <md-input-container flex>
-                    <label>Event URL</label>
-                    <input ng-model="holder.card.url">
-                </md-input-container>
-                <md-datepicker ng-model="holder.card.date" md-placeholder="Event Date"></md-datepicker>
-                <md-input-container flex>
-                    <label>Event Time</label>
-                    <input ng-model="holder.card.time" placeholder="hh:mm AM/PM">
-                </md-input-container>
-            </div>
+            <md-datepicker ng-model="holder.card.expiresOn" md-placeholder="Expires On"></md-datepicker>
             <md-button class="md-primary md-raised" flex="25">
                 <label for="file-input">Choose Image(s)</label>
             </md-button>

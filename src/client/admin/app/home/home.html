@@ -1,7 +1,10 @@
-<md-card layout="column" ng-repeat="page in cards" ng-if="page.page==='home'||page.includeOnHome">
+<md-card layout="column" ng-repeat="page in cards">
     <md-card-title layout="row">
         <div layout-align="start center" flex="50" layout="row">
-            <div class="md-headline">{{page.header}}</div>
+            <div layout="column">
+                <div class="md-headline">{{page.header}}</div>
+                <div class="md-subheader">Displays On Page {{page.page}} <span ng-show="!!page.expiresOn">- expires on {{page.expiresOn | date:"MMM dd"}}</span></div>
+            </div>
         </div>
         <div layout-align="end center" flex="50" layout="row">
             <div class="md-subheader" ng-show="page.page=='instrument'">{{page.price | currency}}</div>

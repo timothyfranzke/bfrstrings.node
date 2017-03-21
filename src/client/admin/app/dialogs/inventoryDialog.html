@@ -58,7 +58,7 @@
                     <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
                 </span>
                     <span ng-repeat="image in inventoryItem.item.images">
-                    <img ng-src="{{image.thumb}}" width="150px" max-height="100%"/>
+                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{inventoryItem.item._id}}/thumbs/{{image}}.png" width="150px" max-height="100%"/>
                     <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="updateRemoveImage($index)">close</md-button>
                 </span>
                 </div>

@@ -4,13 +4,12 @@
             <label>Search Inventory</label>
             <input type="text" class="search" ng-model="searchValue" ng-change="search(searchValue)">
         </md-input-container>
-        <span layout="row" layout-padding layout-align="center center">
-
-                <md-button class="material-icons" ng-click="addCard('home')">
-                    <label>Add Card</label>
-                    <i class="material-icons">add</i>
-                </md-button>
-            </span>
+        <div layout="row" layout-padding layout-align="center center">
+            <label>Card</label>
+            <md-button class="material-icons" ng-click="addCard('home')">
+                add
+            </md-button>
+        </div>
         <div layout="row" layout-align="center" >
             <md-button href="/admin#!/inventory">
                 Inventory
@@ -19,28 +18,6 @@
                 add
             </md-button>
         </div>
-        <!--div ng-show="showInventory" layout="column">
-            <span layout="row" layout-padding layout-align="center center">
-                <md-button layout="row" layout-align="start" ng-click="filterGuitar()">
-                    Guitars
-                </md-button>
-            </span>
-            <span layout="row" layout-padding layout-align="center center">
-                <md-button layout="row" layout-align="start" ng-click="filterBanjo()">
-                    Banjos
-                </md-button>
-            </span>
-            <span layout="row" layout-padding layout-align="center center">
-                <md-button layout="row" layout-align="start" ng-click="filterMando()">
-                    Mandolins
-                </md-button>
-            </span>
-            <span layout="row" layout-padding layout-align="center center">
-                <md-button layout="row" layout-align="start" ng-click="filterOther()">
-                    Other Instruments
-                </md-button>
-            </span>
-        </div-->
         </md-content>
 </md-sidenav>
 <div class="loading" ng-show="isLoading">

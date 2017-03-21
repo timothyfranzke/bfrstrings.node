@@ -162,6 +162,13 @@ app.post('/api/inventory', function(req,res){
     req.body.active = true;
     req.body.date_created = Date.now();
     req.body.images = [];
+    if (!!req.body.number_of_images)
+    {
+        for(var i = 1; i <= req.body.number_of_images; i++)
+        {
+            req.body.images.push(i);
+        }
+    }
     db.collection('inventory').insert(req.body, function(err, inventoryResult){
         if (err) return console.log(err);
 

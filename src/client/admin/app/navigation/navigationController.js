@@ -204,22 +204,27 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
             fullscreen : true
         }).then(function(data){
             $scope.isLoading = true;
+            var numberOfImages = data.images.length;
+            data.item.number_of_images = numberOfImages;
             baseService.POST(inventoryUrl, data.item).then(function(res){
-
                 var resultId = res.data.ops[0]._id;
                 if(res.data.ops[0].inventory_id !== undefined)
                 {
                     resultId = res.data.ops[0].inventory_id;
                 }
-                var imageUrl = inventoryUrl +"/" + resultId + "/image";
+                var imageUrl = "http://www.franzkedesigner.com/bfstrings_images/CreateImageService.php";
                 res.data.ops[0].description = $sce.trustAsHtml(res.data.ops[0].description);
                 var inventoryItem = res.data.ops[0];
                 inventoryItem.images = [];
-                var numberOfImages = data.images.length;
-                console.log("Num images: " + numberOfImages);
+
                 var i = 1;
+                var id = 1;
                 data.images.forEach(function(image){
-                    baseService.POST(imageUrl, image).then(function(res){
+                    var imageData = image.base64;
+                    imageData.id = resultId;
+                    imageData.imageId = id;
+                    id++;
+                    baseService.POST(imageUrl, imageData).then(function(res){
                         i++;
                        if(i==numberOfImages){
                            $scope.isLoading = false;

@@ -40,7 +40,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
         };
         $scope.options = {
             width: '500',
-            loop: true,
+            loop: false,
             keyboard: true,
             nav: 'thumbs',
             allowfullscreen: true
@@ -95,7 +95,15 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
 
             }
             $scope.item = data;
-            $scope.images = data.images;
+            $scope.images = [];
+            data.images.forEach(function(imageId){
+                var img ={};
+                img.id = imageId;
+                img.thumb = 'http://franzkedesigner.com/img/inventory/' + data._id + '/thumbs/' + imageId + '.png';
+                img.full = 'http://franzkedesigner.com/img/inventory/' + data._id + '/' + imageId + '.png';
+                img.img = 'http://franzkedesigner.com/img/inventory/' + data._id + '/' + imageId + '.png';
+                $scope.images.push(img);
+            });
             $scope.description = $sce.trustAsHtml($scope.item.description);
             if($scope.item.videoId !== undefined)
             {

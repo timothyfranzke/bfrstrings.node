@@ -96,7 +96,7 @@ bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, 
         return deferred.promise;
 
     };
-    $scope.$watch('isFeaturedInstrument', function(newVal)
+    $scope.$watch('holder.card.date', function(newVal)
     {
 
     });

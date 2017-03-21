@@ -1,12 +1,12 @@
-<div layout="row">
+
     <div layout="column">
-        <md-card flex-xs flex-lt-md="100" flex="90">
+        <md-card flex-xs flex-lt-md="100" flex="100">
             <span layout="row" layout-align="center" class="md-headline">{{item.name}}</span>
             <md-card-content layout="column">
                 <div layout-gt-md="row" layout="column">
                     <div layout="row" layout-align="center" style="margin-bottom: 100px">
                         <md-card-media  class="card-media" layout-padding layout-align="center" flex="50">
-                            <div ap-fotorama="options" ng-model="item.images" />
+                            <div ap-fotorama="options" ng-model="images" />
                             <!--<div id="fotoGallery" data-auto="false" fotorama item="images" class="fotorama" data-allowfullscreen="true" data-arrows="true" data-width="100%" data-minwidth="400" data-maxwidth="1000" data-minheight="300" data-maxheight="100%">-->
                         </md-card-media>
                     </div>
@@ -41,74 +41,3 @@
             </md-card-actions>
         </md-card>
     </div>
-    <div layout="column" layout-padding ng-if="$mdMedia('gt-md')">
-        <span class="md-subheader">Recently Viewed</span>
-        <md-card ng-repeat="rvItem in recentlyViewed">
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">{{rvItem.name}} </span>
-                    <span class="md-subhead">{{rvItem.price | currency}}</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media">
-                        <img ng-src="img/inventory/{{rvItem.id}}/1.png"/>
-                    </div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button href="#/inventory/{{rvItem.id}}">View</md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
-</div>
-
-
-
-
-<!--
-<div layout-gt-md="row" layout="column" layout-align="center">
-    <div ng-hide="$mdMedia('gt-md')" layout="row" layout-align="center" flex="100">
-        <span span class="md-headline">{{item.name}} </span>
-    </div>
-
-    <div layout="column" layout-padding layout-margin flex-gt-md="65" flex="100">
-        <div ng-show="$mdMedia('gt-md')" layout="row" layout-align="center">
-            <span class="md-headline">{{item.name}} </span>
-        </div>
-        <p data-ng-bind-html="description">{{description}}</p>
-        <div class="price">{{item.price | currency}}</div>
-        <div layout="row" layout-margin layout-padding layout-align="center">
-            <md-button ng-click="goInventory()">
-                <md-icon class="material-icons">chevron_left</md-icon>Back to Inventory
-            </md-button>
-            <md-button ng-click="openInquire(item)">
-                Inquire
-            </md-button>
-        </div>
-    </div>
-    <md-divider></md-divider>
-    <div layout="column" layout-padding ng-if="$mdMedia('gt-md')">
-        <span class="md-subheader">Recently Viewed</span>
-        <div class="recentItem" ng-repeat="rvItem in recentlyViewed">
-            <md-card>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">{{rvItem.name}} </span>
-                        <span class="md-subhead">${{rvItem.price | currency}}</span>
-                    </md-card-title-text>
-                    <md-card-title-media>
-                        <div class="md-media-sm card-media">
-                            <img ng-src="img/inventory/{{rvItem.id}}/1.png"/>
-                        </div>
-                    </md-card-title-media>
-                </md-card-title>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button href="#/inventory/{{rvItem.id}}">View</md-button>
-                </md-card-actions>
-            </md-card>
-        </div>
-    </div>
-</div>-->
-
-</div>
-
