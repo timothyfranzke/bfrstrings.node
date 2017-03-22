@@ -63,14 +63,6 @@ app.get('/api/cards', function(req,res){
 app.post('/api/cards', function(req,res){
     req.body.active = true;
     req.body.date_created = Date.now();
-    req.body.images = [];
-    if (!!req.body.number_of_images)
-    {
-        for(var i = 1; i <= req.body.number_of_images; i++)
-        {
-            req.body.images.push(i);
-        }
-    }
     if (!!req.body.expiresOn)
     {
         req.body.expiresOn = new Date(req.body.expiresOn);
@@ -141,11 +133,12 @@ app.put('/api/cards/:id', function(req, res){
 
 app.delete('/api/cards/:id', function(req, res){
     var id = mongo.ObjectID(req.params.id);
-   db.collection('cards').findOneAndUpdate({"_id":id}, {$set : {"active":false}}, function(err, result){
-       if (err) return console.log(err);
+    console.log("deleting " + id);
+    db.collection('cards').findOneAndUpdate({"_id":id}, {$set : {"active":false}}, function(err, result){
+        if (err) return console.log(err);
 
-       res.json(result);
-   })
+        res.json(result);
+    })
 });
 
 app.get('/api/inventory/:id', function(req,res){

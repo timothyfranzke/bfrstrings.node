@@ -1,4 +1,4 @@
-<md-card layout="column" ng-repeat="page in cards">
+<md-card layout="column" ng-repeat="page in cards | orderBy:'-date_created'">
     <md-card-title layout="row">
         <div layout-align="start center" flex="50" layout="row">
             <div layout="column">
@@ -48,6 +48,7 @@
         <md-button href="{{page.action}}">View</md-button>
     </md-card-actions>
     <md-card-actions layout="row" layout-align="end center" ng-show="!!page.url">
+        <md-button>DELETE</md-button>
         <md-button href="{{page.url}}">View</md-button>
     </md-card-actions>
 </md-card>

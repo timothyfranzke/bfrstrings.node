@@ -43,6 +43,7 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
         $state.go("home");
     };
     $scope.navInventory = function(){
+        instrumentService.clearFilter();
         $state.go("inventory");
     };
     $scope.resetInventory = function(){
@@ -174,7 +175,11 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
             $scope.isLoading = true;
             data.active = true;
             var numberOfImages = data.images.length;
-            data.card.number_of_images = numberOfImages;
+            data.card.images = [];
+            for(var i = 1; i <= numberOfImages; i++)
+            {
+                data.card.images.push(i);
+            }
             baseService.POST(url, data.card).then(function(res){
                     var resultId = res.data.ops[0]._id;
                     var cardItem = res.data.ops[0];

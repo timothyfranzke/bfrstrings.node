@@ -39,6 +39,7 @@ bfApp.controller('navigationController', function($scope, $state, $mdSidenav, $t
         $state.go("home");
     };
     $scope.navInventory = function(){
+        instrumentService.clearFilter();
         $state.go("inventory");
     };
     $scope.resetInventory = function(){

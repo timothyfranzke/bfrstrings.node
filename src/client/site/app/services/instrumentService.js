@@ -16,6 +16,11 @@ bfApp.factory("instrumentService", function(inventoryModel){
                     item.visible = false;
                 }
             })
+        },
+        clearFilter : function(){
+            inventoryModel.inventory.forEach(function(item){
+                item.visible = true;
+            })
         }
     }
 });
