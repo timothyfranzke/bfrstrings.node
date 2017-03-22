@@ -99,9 +99,10 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
             data.images.forEach(function(imageId){
                 var img ={};
                 img.id = imageId;
+                img.type = 'image';
                 img.thumb = 'http://franzkedesigner.com/img/inventory/' + data._id + '/thumbs/' + imageId + '.png';
                 img.full = 'http://franzkedesigner.com/img/inventory/' + data._id + '/' + imageId + '.png';
-                img.img = 'http://franzkedesigner.com/img/inventory/' + data._id + '/' + imageId + '.png';
+                img.url = 'http://franzkedesigner.com/img/inventory/' + data._id + '/' + imageId + '.png';
                 $scope.images.push(img);
             });
             $scope.description = $sce.trustAsHtml($scope.item.description);

@@ -53,7 +53,7 @@ app.get('/api/cards', function(req,res){
                {expiresOn: null},
                {expiresOn: {$gte: new Date()}}
         ]
-        }).toArray(function(err,result){
+    }).sort({date_created:-1}).toArray(function(err,result){
        if (err) return console.log(err);
 
        res.json(result);
