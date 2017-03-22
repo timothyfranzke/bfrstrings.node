@@ -188,29 +188,24 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
                     if (data.images.length > 0)
                     {
                         data.images.forEach(function(image){
+                            $scope.isLoading = true;
                             var imageData = image.base64;
                             imageData.id = resultId;
                             imageData.imageId = id;
                             id++;
                             baseService.POST(imageUrl, imageData).then(function(res){
-                                i++;
-                                if(i==numberOfImages){
-                                    $scope.isLoading = false;
-                                }
-                            });
+
+                            }).finally(function(){$scope.isLoading = false;});
                         });
                     }
-                    $scope.isLoading = false;
             },
             function(err){
-                $scope.isLoading = false;
                 console.log(err);
             });
         }, function(err)
         {
-            $scope.isLoading = false;
             console.log(err);
-        })
+        }).finally(function(){$scope.isLoading = false;})
     };
     $scope.addInstrument = function(type){
         $mdDialog.show({

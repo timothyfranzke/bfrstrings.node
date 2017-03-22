@@ -9,10 +9,9 @@
                   ng-if="item.visible"
                   layout="row"
                   layout-align="start center"
-                  layout-padding
 
     >
-        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch flex>
 
             <md-card-title>
                 <md-card-title-text>
@@ -21,7 +20,7 @@
                 </md-card-title-text>
                 <md-card-title-media>
                     <div class="md-media-md card-media">
-                        <img ng-src="{{item.images[0].thumb}}" ng-show="!imgLoad"/>
+                        <img ng-src="http://www.franzkedesigner.com/img/inventory/{{item._id}}/thumbs/{{item.images[0]}}.png" ng-show="!imgLoad"/>
                         <md-progress-circular ng-show="imgLoad" class="md-accent" md-diameter="40"></md-progress-circular>
                     </div>
                 </md-card-title-media>

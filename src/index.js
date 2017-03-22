@@ -151,7 +151,7 @@ app.get('/api/inventory/:id', function(req,res){
 });
 
 app.get('/api/inventory', function(req,res){
-    db.collection('inventory').find({"active":true}).toArray(function(err,result){
+    db.collection('inventory').find({"active":true}).sort({date_created:-1}).toArray(function(err,result){
         if (err) return console.log(err);
 
         res.json(result);
