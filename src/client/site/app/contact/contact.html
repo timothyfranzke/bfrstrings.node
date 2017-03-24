@@ -1,5 +1,24 @@
-<div id="catalogue">
-    <h1>Contact Us</h1>
+<md-dialog aria-label="Create Card" flex="60">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create Card</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon class="material-icons">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout="column" layout-padding ng-show="!editingDescription">
+            <div layout="row">
+                <md-select ng-model="contact.question">
+                    <laebl>Question</laebl>
+                    <md-option ng-repeat="i in options" ng-value="i.value" >
+                        {{i.name}}
+                    </md-option>
+                </md-select>
+            </div>
+        </md-dialog-content>
     <label for="questionType">Question: </label><select id="questionType" class="contact"  ng-options="i.value as i.value for i in options" ng-model="contact.question"></select><br/><br/>
     <span ng-show="contact.question!=='General Question'" ><label for="itemType">Type: </label><select id="itemType" class="contact"ng-options="i.value as i.value for i in instrumentTypes" ng-model="contact.itemType" ng-change="getItems(contact.itemType)"></select></span><br/><br/>
     <span ng-show="contact.itemType"><label for="itemType">Instrument: </label><select class="contact" ng-options="i.name as i.name for i in items" ng-model="contact.itemName"></select></span>
@@ -15,4 +34,5 @@
     </form>
     <div class="clear"></div>
 
-</div>
+    </form>
+</md-dialog>

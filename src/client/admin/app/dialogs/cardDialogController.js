@@ -1,6 +1,11 @@
-bfAppAdmin.controller('cardDialogController', function($scope, $mdDialog, $sce, $q){
+bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDialog, $sce, $q){
     $scope.holder = {};
+
     $scope.holder.card = {};
+    if(cardItem != undefined)
+    {
+        $scope.holder.card = cardItem;
+    }
     $scope.holder.image = {};
     $scope.is = {};
     $scope.is.featuredInstrument = false;

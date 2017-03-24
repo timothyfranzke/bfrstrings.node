@@ -34,6 +34,41 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
     $scope.updateRemoveImage =function(index){
         $scope.inventoryItem.item.images.splice(index,1);
     };
+    $scope.selectPrimary = function(index, type)
+    {
+        $scope.primary_image = {};
+        $scope.primary_image.type = type;
+        var max_id = 1;
+        $scope.inventoryItem.item.images.forEach(function(image){
+            console.log("image: " + image + " max_id: " + max_id);
+            if(image > max_id)
+            {
+                max_id = image;
+            }
+
+        });
+        max_id ++;
+        console.log(" max_id: " + max_id);
+        if(type === 1)
+        {
+            $scope.inventoryItem.item.primary_image = index;
+            $scope.primary_image.image_id = index;
+
+        }
+        else{
+            console.log(index);
+            console.log("index: " + index + " max_id: " + max_id);
+            var next_id = max_id + index;
+            $scope.primaryimage = next_id;
+            $scope.inventoryItem.item.primary_image = next_id;
+            console.log($scope.inventoryItem.item.primary_image);
+            $scope.primary_image.image = $scope.inventoryItem.images[index];
+            console.log($scope.primary_image.image);
+        }
+
+        console.log($scope.inventoryItem.item.primary_image);
+
+    };
 
     $scope.$watch('uploadedImages', function(newVal){
         if(newVal !== undefined){

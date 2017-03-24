@@ -39,9 +39,19 @@
                 </md-checkbox>
                 <md-datepicker ng-show="inventoryItem.item.includeOnHome" ng-model="inventoryItem.item.expiresOn" md-placeholder="Expires On"></md-datepicker>
             </div>
-            <md-button class="md-primary md-raised" flex="25">
-                <label for="file-input">Choose Image(s)</label>
-            </md-button>
+            <div layout="row" layout-align="start" layout-margin>
+                <div layout="column">
+                    <label>Primary Image</label>
+                    <img ng-show="primary_image.type==2" ng-src="{{primary_image.image.base64.thumb}}" width="150px" max-height="100%"/>
+                    <img ng-show="primary_image.type==1" ng-src="http://www.franzkedesigner.com/img/inventory/{{inventoryItem.item._id}}/thumbs/{{primary_image.image_id}}.png" width="150px" max-height="100%"/>
+                </div>
+            </div>
+            <div layout="row" layout-margin>
+                <md-button class="md-primary md-raised" class="clickable">
+                    <label for="file-input">Choose Image(s)</label>
+                </md-button>
+            </div>
+
             <input id="file-input"
                    type='file'
                    ng-model="uploadedImages"
@@ -53,14 +63,15 @@
             >
             <div ng-show="inventoryItem.images.length > 0 || inventoryItem.item.images.length" layout="row" layout-padding class="scroll-wrapper" >
                 <div class="scrolls">
-                <span ng-repeat="image in inventoryItem.images">
-                    <img ng-src="{{image.base64.thumb}}" width="150px" max-height="100%"/>
-                    <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
-                </span>
+                    <span ng-repeat="image in inventoryItem.images">
+                        <!--<md-checkbox style="position:relative;top:-160px; right:-25px" ng-click="selectPrimary($index, 2)" ng-model="image.isPrimary"></md-checkbox>-->
+                        <img class="clickable" ng-src="{{image.base64.thumb}}" ng-click="selectPrimary($index, 2)" width="150px" max-height="100%"/>
+                        <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="removeImage($index)">close</md-button>
+                    </span>
                     <span ng-repeat="image in inventoryItem.item.images">
-                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{inventoryItem.item._id}}/thumbs/{{image}}.png" width="150px" max-height="100%"/>
-                    <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="updateRemoveImage($index)">close</md-button>
-                </span>
+                        <img class="clickable" ng-click="selectPrimary(image, 1)" ng-src="http://www.franzkedesigner.com/img/inventory/{{inventoryItem.item._id}}/thumbs/{{image}}.png" width="150px" max-height="100%"/>
+                        <md-button style="position:relative;top:-160px; right:25px" class="md-fab md-mini material-icons" ng-click="updateRemoveImage($index)">close</md-button>
+                    </span>
                 </div>
             </div>
 

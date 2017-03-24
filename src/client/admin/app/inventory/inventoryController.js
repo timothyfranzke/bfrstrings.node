@@ -78,39 +78,40 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
-            var numberOfImages = data.images.length;
-            data.item.added_images = numberOfImages;
+            $scope.isLoading = true;
+            var image_array = [];
+            var max_image_id = 1;
+            data.item.added_images = data.images.length;
+            data.item.images.forEach(function(image){
+                if(image > max_image_id)
+                    max_image_id = image;
+            });
+            max_image_id ++;
+            data.images.forEach(function(image){
+                image_array.push(max_image_id);
+                max_image_id ++;
+                console.log("max id: " + max_image_id);
+            });
+            data.item.images = data.item.images.concat(image_array);
+            console.log("concat array: " + data.item.images);
             $scope.isLoading = true;
             baseService.PUT(url, data.item._id, data.item).then(function(res){
-                var max_id = 0;
-                if(!!data.item.images)
-                {
-                    max_id = data.item.images[data.item.images - 1]
-                }
-                var i = 1;
-                var id = max_id + 1;
+                var i = image_array[0];
                 data.images.forEach(function(image){
                     var imageData = image.base64;
                     imageData.id = data.item._id;
-                    imageData.imageId = id;
-                    id++;
+                    imageData.imageId = i;
+                    i++;
                     baseService.POST(imageUrl, imageData).then(function(res){
-                        i++;
-                        if(i==numberOfImages){
-                            $scope.isLoading = false;
-                        }
+                        console.log("added: " + res);
                     });
                 });
-
                 $scope.items[index] = res.data.value;
-                $scope.isLoading = false;
-
             })
         }, function(err)
         {
-            $scope.isLoading = false;
             console.log(err);
-        })
+        }).finally(function(){$scope.isLoading = false;})
     };
     $scope.getNumber = function(num) {
         alert(num);

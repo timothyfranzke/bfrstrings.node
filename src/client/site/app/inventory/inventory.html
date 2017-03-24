@@ -17,8 +17,8 @@
                         <span class="md-subhead">{{item.price | currency}}</span>
                     </md-card-title-text>
                     <md-card-title-media>
-                        <div class="md-media-md card-media">
-                            <img ng-src="http://www.franzkedesigner.com/img/inventory/{{item._id}}/thumbs/{{item.images[0]}}.png" ng-show="!imgLoad"/>
+                        <div class="md-media-md card-media" flex>
+                            <img ng-src="http://www.franzkedesigner.com/img/inventory/{{item._id}}/thumbs/{{item.primary_image}}.png" ng-show="!imgLoad" flex/>
                             <md-progress-circular ng-show="imgLoad" class="md-accent" md-diameter="40"></md-progress-circular>
                         </div>
                     </md-card-title-media>

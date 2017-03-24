@@ -189,9 +189,17 @@ app.post('/api/inventory', function(req,res){
 app.put('/api/inventory/:id', function(req, res){
     var id = mongo.ObjectID(req.params.id);
     delete req.body._id;
-    db.collection('inventory').findOneAndUpdate({"_id":id}, {$set : req.body}, function(err, result){
+    db.collection('inventory').findOneAndUpdate({"_id":id}, {$set : req.body}, function(err, inventoryResult){
         if (err) return console.log(err);
-        res.json(result);
+        if(req.body.includeOnHome)
+        {
+            var item = req.body;
+            item.inventory_id = id;
+            db.collection('cards').insert(item, function(err, cardResult){
+                if (err) return console.log(err);
+            });
+        }
+        res.json(inventoryResult);
     })
 });
 

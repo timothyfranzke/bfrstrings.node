@@ -19,7 +19,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
             console.log(item);
             $mdDialog.show({
                 controller: 'contactController',
-                templateUrl: 'app/partials/dialog/contact.html',
+                templateUrl: 'app/contact/contact.html',
                 parent: angular.element(document.body),
                 clickOutsideToClose:true,
                 fullscreen: true
