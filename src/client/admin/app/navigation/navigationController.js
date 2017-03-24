@@ -166,6 +166,7 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
     };
     $scope.addCard = function(type){
         $mdDialog.show({
+            locals:{cardItem:{}},
             controller:'cardDialogController',
             templateUrl: 'app/dialogs/cardDialog.html',
             clickOutsideToClose: true,

@@ -2,7 +2,7 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
     $scope.holder = {};
 
     $scope.holder.card = {};
-    if(cardItem != undefined)
+    if(!!cardItem)
     {
         $scope.holder.card = cardItem;
     }

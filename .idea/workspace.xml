@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf1f571d-3711-43e6-85cc-ebd26a9aa3ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/home/home.html" afterPath="$PROJECT_DIR$/src/client/admin/app/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/home/homeController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/home/homeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/inventory/inventory.html" afterPath="$PROJECT_DIR$/src/client/admin/app/inventory/inventory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/inventory/inventoryController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/inventory/inventoryController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/navigation/navigation.html" afterPath="$PROJECT_DIR$/src/client/admin/app/navigation/navigation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/site/app/contact/contact.html" afterPath="$PROJECT_DIR$/src/client/site/app/contact/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/site/app/inventory/inventory.html" afterPath="$PROJECT_DIR$/src/client/site/app/inventory/inventory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/site/app/item/item.html" afterPath="$PROJECT_DIR$/src/client/site/app/item/item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/site/app/item/itemController.js" afterPath="$PROJECT_DIR$/src/client/site/app/item/itemController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js" afterPath="$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js" />
     </list>
     <ignored path="bfrstrings.node.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="375">
+              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -51,8 +39,18 @@
       <file leaf-file-name="navigationController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="92" />
+            <state relative-caret-position="240">
+              <caret line="168" column="33" lean-forward="true" selection-start-line="168" selection-start-column="33" selection-end-line="168" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inventoryDialogController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -78,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cardDialogController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cardDialogController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -111,21 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventory.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/site/app/inventory/inventory.html">
+      <file leaf-file-name="navigationController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/site/app/navigation/navigationController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="126" lean-forward="false" selection-start-line="20" selection-start-column="126" selection-end-line="20" selection-end-column="126" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/site/app/home/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="46" column="22" lean-forward="false" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state relative-caret-position="630">
+              <caret line="42" column="23" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -205,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/client/site/app/navigation/navigation.html" />
         <option value="$PROJECT_DIR$/src/client/site/lib/js/angular-fotorama.js" />
         <option value="$PROJECT_DIR$/src/client/site/app/app.js" />
-        <option value="$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js" />
         <option value="$PROJECT_DIR$/src/client/site/app/item/item.html" />
         <option value="$PROJECT_DIR$/src/client/site/app/item/itemController.js" />
         <option value="$PROJECT_DIR$/src/client/site/app/contact/contact.html" />
@@ -216,10 +203,11 @@
         <option value="$PROJECT_DIR$/src/client/admin/app/navigation/navigation.html" />
         <option value="$PROJECT_DIR$/src/client/admin/app/inventory/inventory.html" />
         <option value="$PROJECT_DIR$/src/client/admin/app/inventory/inventoryController.js" />
-        <option value="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js" />
         <option value="$PROJECT_DIR$/src/client/admin/app/home/homeController.js" />
         <option value="$PROJECT_DIR$/src/client/admin/app/home/home.html" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js" />
+        <option value="$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js" />
       </list>
     </option>
   </component>
@@ -548,6 +536,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfstrings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfstrings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfstrings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bfstrings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialogs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -666,12 +714,12 @@
       <workItem from="1490146702560" duration="2556000" />
       <workItem from="1490182465594" duration="295000" />
       <workItem from="1490195632285" duration="7856000" />
-      <workItem from="1490233527899" duration="11400000" />
+      <workItem from="1490233527899" duration="11729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189166000" />
+    <option name="totallyTimeSpent" value="189495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -895,14 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/site/app/navigation/navigationController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="42" column="23" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -983,14 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -1047,10 +1079,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js">
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/home/homeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="92" />
+        <state relative-caret-position="351">
+          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+          <folding>
+            <marker date="1490327744000" expanded="true" signature="134:2461" ph="{...}" />
+            <marker date="1490327744000" expanded="true" signature="1430:2458" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1063,25 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/admin/app/home/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-          <folding>
-            <marker date="1490327744000" expanded="true" signature="134:2461" ph="{...}" />
-            <marker date="1490327744000" expanded="true" signature="1430:2458" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/admin/app/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
@@ -1090,10 +1114,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/client/site/app/navigation/navigationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+        <state relative-caret-position="630">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/navigation/navigationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="168" column="33" lean-forward="true" selection-start-line="168" selection-start-column="33" selection-end-line="168" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/inventoryDialogController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/admin/app/dialogs/cardDialogController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
