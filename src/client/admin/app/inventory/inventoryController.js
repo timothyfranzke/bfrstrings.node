@@ -94,7 +94,6 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
             });
             data.item.images = data.item.images.concat(image_array);
             console.log("concat array: " + data.item.images);
-            $scope.isLoading = true;
             baseService.PUT(url, data.item._id, data.item).then(function(res){
                 var i = image_array[0];
                 data.images.forEach(function(image){

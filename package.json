@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "timothy franzke",
@@ -23,8 +20,10 @@
     "jsonwebtoken": "^7.3.0",
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.4",
+    "nodemailer": "^4.0.1",
     "npm": "^4.3.0",
     "passport": "^0.3.2",
+    "sendmail": "^1.1.1",
     "sharp": "^0.17.2"
   },
   "devDependencies": {

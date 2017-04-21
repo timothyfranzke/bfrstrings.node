@@ -15,6 +15,11 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
                 {
                     card.description = $sce.trustAsHtml(card.description);
                 }
+                if(card.videoId !== undefined)
+                {
+                    var url = "https://www.youtube.com/embed/" + card.videoId;
+                    card.url = $sce.trustAsResourceUrl(url);
+                }
             });
             cardService.cards = res.data;
             $scope.cards = cardService.cards;
@@ -27,15 +32,15 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
             fullscreen : false
         }).then(function() {
             baseService.DELETE(request.url, cardService.cards[index]._id).then(function (res) {
-                console.log(cardService.cards.length);
-                console.log(index);
                 cardService.cards.splice(index, 1);
-                console.log(cardService.cards.length);
             })
         });
     };
     $scope.editCard = function(item, index){
-        item.expiresOn = new Date(item.expiresOn);
+        console.log(item);
+        if(!!item.expiresOn)
+            item.expiresOn = new Date(item.expiresOn);
+
         $mdDialog.show({
             locals:{cardItem:item},
             controller:'cardDialogController',
@@ -44,10 +49,17 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
             fullscreen : true
         }).then(function(data){
             $scope.isLoading = true;
-            baseService.PUT(url, data.item._id, data.item).then(function(res){
+            if (data.description !== undefined)
+            {
+                if(typeof data.description !== "string")
+                {
+                    data.description = "";
+                }
+            }
+            baseService.PUT(url, data.card._id, data.card).then(function(res){
                 data.images.forEach(function(image){
                     var imageData = image.base64;
-                    imageData.id = data.item._id;
+                    imageData.id = data.card._id;
                     imageData.imageId = i;
                     i++;
                     baseService.POST(imageUrl, imageData).then(function(res){

@@ -17,12 +17,13 @@
         <div ng-show="$odd || !$mdMedia('gt-md')" layout-align="start" layout="row" flex-gt-md="30" flex >
             <md-card-title-media ng-show="!!page.videoId">
                 <iframe width="420" height="315"
-                        ng-src="{{page.url}}">
+                        ng-src="{{page.video_url}}">
                 </iframe>
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
+                    <img ng-show="!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png"/>
+                    <img ng-show="!!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page.inventory_id}}/{{primary_image}}.png"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -38,12 +39,13 @@
         <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="40" flex >
             <md-card-title-media ng-show="!!page.videoId">
                 <iframe width="420" height="315"
-                        ng-src="{{page.url}}">
+                        ng-src="{{page.video_url}}">
                 </iframe>
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
+                    <img ng-show="!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png"/>
+                    <img ng-show="!!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page.inventory_id}}/{{primary_image}}.png"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -54,6 +56,4 @@
     <md-card-actions layout="row" layout-align="end center" ng-show="!!page.url">
         <md-button href="{{page.url}}">View</md-button>
     </md-card-actions>
-    </div>
 </md-card>
-</div>

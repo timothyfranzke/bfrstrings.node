@@ -6,7 +6,10 @@
         </div>
         <div layout-align="end center" flex="50" layout="row">
             <div class="md-subheader" ng-show="!!page.price">{{page.price | currency}}</div>
-            <div class="md-subheader" ng-show="!!page.date">{{page.date | date:"MMM dd 'at' h:mma"}}</div>
+            <div class="md-subheader">
+                <span ng-show="!!page.date">{{page.date | date:"MMM dd"}} </span>
+                <span ng-show="!!page.time">at {{page.time}}</span>
+            </div>
             <div class="md-subheader" ng-show="!!page.startDate">{{page.startDate}}</div>
         </div>
     </md-card-title>
@@ -14,12 +17,13 @@
         <div ng-show="$odd || !$mdMedia('gt-md')" layout-align="start" layout="row" flex-gt-md="30" flex >
             <md-card-title-media ng-show="!!page.videoId">
                 <iframe width="420" height="315"
-                        ng-src="{{page.url}}">
+                        ng-src="{{page.video_url}}">
                 </iframe>
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
+                    <img ng-show="!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png"/>
+                    <img ng-show="!!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page.inventory_id}}/{{primary_image}}.png"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -32,15 +36,16 @@
                 </md-card-content>
             </div>
         </div>
-        <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="30" flex >
+        <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="40" flex >
             <md-card-title-media ng-show="!!page.videoId">
                 <iframe width="420" height="315"
-                        ng-src="{{page.url}}">
+                        ng-src="{{page.video_url}}">
                 </iframe>
             </md-card-title-media>
             <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
+                    <img ng-show="!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png"/>
+                    <img ng-show="!!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page.inventory_id}}/{{primary_image}}.png"/>
                 </div>
             </md-card-title-media>
         </div>
@@ -51,6 +56,4 @@
     <md-card-actions layout="row" layout-align="end center" ng-show="!!page.url">
         <md-button href="{{page.url}}">View</md-button>
     </md-card-actions>
-    </div>
 </md-card>
-</div>

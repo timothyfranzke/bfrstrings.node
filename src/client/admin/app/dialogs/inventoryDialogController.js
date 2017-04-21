@@ -9,6 +9,7 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
     {
         $scope.inventoryItem.item = inventoryItem;
         $scope.descriptionDisplay = $sce.trustAsHtml($scope.inventoryItem.item.description);
+        $scope.dateTest = new Date();
     }
 
     $scope.showEditDesciption = function(){
@@ -132,10 +133,10 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
                     thumbHeight = THUMB_MAX_HEIGHT;
                 }
             }
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = i.width;
+            canvas.height = i.height;
             var ctx = canvas.getContext("2d");
-            ctx.drawImage(i, 0, 0, width, height);
+            ctx.drawImage(i, 0, 0, i.width, i.height);
 
             thumbCanvas.width = thumbWidth;
             thumbCanvas.height = thumbHeight;
@@ -143,8 +144,8 @@ bfAppAdmin.controller('inventoryDialogController', function($sce, $mdDialog, $sc
             thumbCtx.drawImage(i, 0, 0, thumbWidth, thumbHeight);
 
             images.base64 = {};
-            images.base64.full = canvas.toDataURL("image/png");
-            images.base64.thumb = thumbCanvas.toDataURL("image/png");
+            images.base64.full = canvas.toDataURL("image/jpeg");
+            images.base64.thumb = thumbCanvas.toDataURL("image/jpeg");
 
             deferred.resolve(images);
         };

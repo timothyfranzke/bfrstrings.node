@@ -4,7 +4,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
             $mdToast.show(
                 $mdToast.simple()
                     .textContent(message)
-                    .position("top right")
+                    .position("bottom right")
                     .hideDelay(3000)
 
             );
@@ -18,24 +18,23 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
             inventoryService.setInquiredInstrument(item);
             console.log(item);
             $mdDialog.show({
+                locals:{item:item},
                 controller: 'contactController',
                 templateUrl: 'app/contact/contact.html',
                 parent: angular.element(document.body),
                 clickOutsideToClose:true,
                 fullscreen: true
-            }).then(function(email){
+            }).then(function(contact){
                 var request = {
-                    url: 'php/Email.php',
+                    url: 'api/contact',
                     method: 'POST',
                     data: contact
                 };
 
                 $http(request)
-                    .success(function (data) {
+                    .then(function (data) {
                         showToast("Your inquiry has been sent.  Thank you!")
                     })
-                    .error(function (data, status) {
-                    });
             })
         };
         $scope.options = {
@@ -109,7 +108,7 @@ bfApp.controller('itemController', function($stateParams, $mdToast, $scope, $mdM
             if($scope.item.videoId !== undefined)
             {
                 var url = "https://www.youtube.com/embed/" + $scope.item.videoId;
-                $scope.item.url = $sce.trustAsResourceUrl(url);
+                $scope.item.videoUrl = $sce.trustAsResourceUrl(url);
             }
 
             //$scope.item.type ="Banjo";

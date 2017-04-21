@@ -29,7 +29,7 @@ a {border:none;}
 #mainImage img{width:100%; height:100%;}
 .mainImage {width:100%; margin:0 auto; padding:0;}
 .mainImage img {width:100%; height:100%;}
-.mainImage {background-image: url("../img/bg/header_background_image_v2.jpg");
+.mainImage {background-image: url("../img/header_bg_repeat.jpg");
     background-repeat: repeat-x; }
 
 #featured{width:92%; background:url(../img/bg/tile.jpg) repeat #FDFDFD; padding:0 4% 140px; position:relative;}

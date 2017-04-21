@@ -1,6 +1,6 @@
 
 
-<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" flex>
 
     <!--    <md-toolbar class="md-theme-indigo">
 
@@ -8,7 +8,7 @@
 
         </md-toolbar>-->
 
-    <md-content layout="column" layout-padding layout-align="center" >
+    <md-content layout="column" layout-padding layout-align="center" flex>
 
         <md-input-container ng-if="!isHome">
 
@@ -79,82 +79,39 @@
            OUR BRAND
 
         </md-button>-->
-
-        <md-button layout="row" ng-click="navInventory()">
-
-            <md-icon class="material-icons">music_note</md-icon>
-
-            Inventory
-
-        </md-button>
-        <md-divider></md-divider>
-
-        <div ng-show="showInventory" layout="column">
-
-            <md-button layout="row" layout-align="start" ng-click="filterGuitar()">
-
+        <div layout="column">
+            <md-button layout="row" layout-align="center" class="md-raised md-primary" ng-click="filterGuitar()" style="color:black">
                 Guitars
-
             </md-button>
-
-            <md-button layout="row" layout-align="start" ng-click="filterBanjo()">
-
+            <md-divider></md-divider>
+            <md-button layout="row" layout-align="center" class="md-raised md-primary" ng-click="filterBanjo()" style="color:black">
                 Banjos
-
             </md-button>
-
-            <md-button layout="row" layout-align="start" ng-click="filterMando()">
-
+            <md-divider></md-divider>
+            <md-button layout="row" layout-align="center" class="md-raised md-primary" ng-click="filterMando()" style="color:black">
                 Mandolins
-
             </md-button>
-
-            <md-button layout="row" layout-align="start" ng-click="filterOther()">
-
+            <md-divider></md-divider>
+            <md-button layout="row" layout-align="center" class="md-raised md-primary" ng-click="filterOther()" style="color:black">
                 Other Instruments
-
             </md-button>
-
-        </div>
-
         <md-divider></md-divider>
-
-        <md-button layout="row" layout-align="start" ui-sref="events">
-
-            <md-icon class="material-icons">event</md-icon>
-
+        <md-button layout="row" layout-align="center" class="md-raised md-primary" ui-sref="events" style="color:black">
             Events
-
         </md-button>
-
         <md-divider></md-divider>
-
-        <md-button layout="row" layout-align="space between" ui-sref="repairShop">
-
-            <md-icon class="material-icons">build</md-icon>
-
-            Repair Shop
-
-        </md-button>
-
+            <md-button layout="row" layout-align="center" class="md-raised md-primary" ui-sref="repairShop" style="color:black">
+               Repair Shop
+            </md-button>
         <md-divider></md-divider>
-
-        <md-button layout="row" layout-align="space between" ui-sref="ourBrand">
-
-            <md-icon class="material-icons">build</md-icon>
-
+        <md-button layout="row" layout-align="center" class="md-raised md-primary" ui-sref="ourBrand" style="color:black">
             Our Custom Instruments
-
         </md-button>
         <md-divider></md-divider>
-
-        <md-button layout="row" layout-align="space between" ui-sref="ourBrand">
-
-            <md-icon class="material-icons">build</md-icon>
-
+        <md-button layout="row" layout-align="center" class="md-raised md-primary" ui-sref="ourBrand" style="color:black">
             Online Store
-
         </md-button>
+        </div>
 
     </md-content>
 

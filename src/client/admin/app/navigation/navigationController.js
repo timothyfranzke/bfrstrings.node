@@ -174,6 +174,13 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
         }).then(function(data){
 
             $scope.isLoading = true;
+            if (data.description !== undefined)
+            {
+                if(typeof data.description !== "string")
+                {
+                    data.description = "";
+                }
+            }
             data.active = true;
             var numberOfImages = data.images.length;
             data.card.images = [];

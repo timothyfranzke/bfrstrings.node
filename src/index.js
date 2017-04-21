@@ -2,6 +2,8 @@ var express = require('express');
 var bodyparser = require('body-parser');
 var fileUpload = require('express-fileupload');
 var mongo = require('mongodb');
+var sendmail = require('sendmail');
+var nodemailer = require('nodemailer');
 var fs = require('fs');
 //var im = require('imagemagick');
 //var sharp = require('sharp');
@@ -20,10 +22,20 @@ mongoClient.connect('mongodb://bfstrings:hawthornuser@ds131340.mlab.com:31340/bf
     if (err) return console.log(err);
     db = database;
 
-    app.listen(process.env.PORT || 3000, function(){
+    app.listen(process.env.PORT || 3001, function(){
         console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     });
 });
+
+let smtpConfig = {
+    host: 'seagull.arvixe.com',
+    port: 465,
+    secure: true, // upgrade later with STARTTLS
+    auth: {
+        user: 'sparrow@franzkedesigner.com',
+        pass: 'dfg123'
+    }
+};
 
 app.get('/:uid', function(req,res){
    res.json('{id:' + req.params.uid + '}')
@@ -47,15 +59,21 @@ app.get('/api/events', function(req,res){
 });
 
 app.get('/api/cards', function(req,res){
-   db.collection('cards').find({"active":true,
-       $or:
-           [
-               {expiresOn: null},
-               {expiresOn: {$gte: new Date()}}
-        ]
+   db.collection('cards').find({"active":true
+
     }).sort({date_created:-1}).toArray(function(err,result){
        if (err) return console.log(err);
-
+       var today = new Date();
+       result.forEach(function(card){
+           var expDate = new Date(card.expiresOn);
+          if(!!card.expiresOn)
+          {
+              if(expDate <= today)
+              {
+                  delete card;
+              }
+          }
+       });
        res.json(result);
    })
 });
@@ -125,6 +143,7 @@ app.post('/api/cards/:id/image', function(req, res){
 app.put('/api/cards/:id', function(req, res){
     var id = mongo.ObjectID(req.params.id);
     delete req.body._id;
+    console.log(req.body);
     db.collection('cards').findOneAndUpdate({"_id":id}, {$set : req.body}, function(err, result){
         if (err) return console.log(err);
         res.json(result);
@@ -253,6 +272,36 @@ app.post('/api/inventory/:id/image', function(req, res){
             });
             db.collection('cards').update({"inventory_id":id},{$push :{"images":imagesRecord} },function(err,updateResult){res.json(updateResult);});
         });
+    });
+});
+
+app.post('/api/contact', function(req, res){
+
+    let mailOptions = {
+        to: 'timothyfranzke@gmail.com   ', // list of receivers
+        subject: 'Hello', // Subject line
+        text: 'Hello world ?', // plain text body
+        html: '<p>' + req.body.notes + '</p>'// html body
+    };
+    let transporter = nodemailer.createTransport(smtpConfig);
+
+// send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+
+    sendmail({
+        from: 'no-reply@ybfstrings.com',
+        to: 'timothyfranzke@gmail.com',
+        replyTo: req.body.emailaddress,
+        subject: req.body.question,
+        html: req.body
+    }, function(err, reply) {
+        console.log(err && err.stack);
+        console.log(reply);
     });
 });
 

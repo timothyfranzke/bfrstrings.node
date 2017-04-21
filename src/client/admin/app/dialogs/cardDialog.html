@@ -15,7 +15,6 @@
                     <label>Header</label>
                     <input ng-model="holder.card.header">
                 </md-input-container>
-                <label style="color:red" ng-show="(holder.card.header.$touched"><em>Required *</em></label>
             </div>
             <div layout="row">
                 <md-input-container flex="50">
@@ -26,10 +25,12 @@
                         </md-option>
                     </md-select>
                 </md-input-container>
-                <label style="color:red" ng-show="holder.card.page"><em>Required *</em></label>
             </div>
             <div layout="row">
-                <md-datepicker ng-model="holder.card.date" md-placeholder="Event Date" flex="50"></md-datepicker>
+                <md-input-container>
+                    <label>Event Date</label>
+                    <md-datepicker ng-model="holder.card.date" md-placeholder="Event Date" flex="50"></md-datepicker>
+                </md-input-container>
             </div>
             <div layout="row">
                 <md-input-container flex="50">
@@ -94,8 +95,11 @@
             </div>
         </md-dialog-content>
     <md-dialog-actions layout="row">
-        <md-button ng-click="submit(holder)">
+        <md-button ng-click="submit(holder)" ng-show="!holder.card._id">
             Create
+        </md-button>
+        <md-button ng-click="submit(holder)" ng-show="!!holder.card._id">
+            Update
         </md-button>
     </md-dialog-actions>
 </md-dialog>

@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v2" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
@@ -18,37 +18,24 @@
     <script src="js/main.js"></script>
     <script src="lib/lib.js"></script>
     <script src="js/modules.js"></script>
-
-    <!--<link href="../../bower_components/angular-material/angular-material.css">
-    <script src="../../bower_components/angular/angular.js"></script>
-    <script src="../../bower_components/angular-ui-router"></script>
-    <script src="../../bower_components/angular-animate/angular-animate.js"></script>
-    <script src="../../bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="../../bower_components/angular-aria/angular-aria.js"></script>
-    <script src="../../bower_components/angular-material/angular-material.js"></script>-->
-
-
 </head>
 
 <body ng-app="bfApp" ng-controller="bfController">
-<md-toolbar layout=row flex layout-align-gt-md="center" layout-align="end center" ng-hide="isHome && $mdMedia('gt-sm')" style="background-image: url('site/img/mobile-header-bg.jpg'); background-repeat: repeat-x;">
+<md-toolbar layout=row flex layout-align-gt-md="center" layout-align="end center" ng-hide="isHome && $mdMedia('gt-sm')" style="background-image: url('img/header_bg_repeat.jpg'); background-repeat: repeat-x;">
     <div class="md-toolbar-tools" ng-hide="$mdMedia('gt-md')">
         <md-button ng-click="toggleLeft()" class="md-fab" ><md-icon class="material-icons">menu</md-icon></md-button>
     </div>
     <div ng-click="goHome()" class="clickable">
-        <img src="img/mobile-header.jpg" alt="Purveyors and makers of fine banjos, mandolins and guitars."/>
+        <img src="img/header_bg_mobile.jpg" alt="Purveyors and makers of fine banjos, mandolins and guitars."/>
     </div>
 </md-toolbar>
-<!--<div class="loading" ng-show="loading">
-    <md-progress-circular class="loader md-accent" md-diameter="140"></md-progress-circular>
-</div>-->
-<md-toolbar layout=row flex layout-align="start center" ng-show="isHome && $mdMedia('gt-sm')" class="mainImage" style="background-image: url('site/img/bg/header_background_image_v2.jpg'); background-repeat: repeat-x;">
+<md-toolbar layout=row flex layout-align="start center" ng-show="isHome && $mdMedia('gt-sm')" class="mainImage" style="background-image: url('img/header_bg_repeat.jpg'); background-repeat: repeat-x;">
     <div layout="row" >
-        <img src="img/bg/header-bf.jpg" alt="Purveyors and makers of fine banjos, mandolins and guitars."/>
+        <img src="img/header_bg.jpg" alt="Purveyors and makers of fine banjos, mandolins and guitars."/>
     </div>
 </md-toolbar>
 <navigation ng-hide="$mdMedia('gt-md')"></navigation>
-<section layout="row" flex>
+<section layout="row" flex style="background-color: grey">
     <md-content layout="column" flex>
         <div layout="row">
             <navigation ng-show="$mdMedia('gt-md')"></navigation>

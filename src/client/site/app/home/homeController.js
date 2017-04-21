@@ -19,14 +19,14 @@ bfApp.controller('homeController', function($scope, $http, $sce, $mdMedia, baseS
     $http(request)
         .then(function (res) {
             res.data.forEach(function(card){
-                if(card.description !== undefined)
+                if(card.description !== undefined && typeof card.description === 'string')
                 {
                     card.description = $sce.trustAsHtml(card.description);
                 }
                 if(card.videoId !== undefined)
                 {
                     var url = "https://www.youtube.com/embed/" + card.videoId;
-                    card.url = $sce.trustAsResourceUrl(url);
+                    card.video_url = $sce.trustAsResourceUrl(url);
                 }
             });
             cardService.cards = res.data;

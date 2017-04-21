@@ -1,15 +1,6 @@
 bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDialog, $sce, $q){
-    $scope.holder = {};
-
-    $scope.holder.card = {};
-    if(!!cardItem)
-    {
-        $scope.holder.card = cardItem;
-    }
-    $scope.holder.image = {};
-    $scope.is = {};
-    $scope.is.featuredInstrument = false;
-    $scope.pages = [
+    console.log(cardItem);
+    var pages = [
         {
             "name":"Events",
             "page":"events"
@@ -27,6 +18,25 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
             "page":"repairShop"
         }
     ];
+    $scope.holder = {};
+
+    $scope.holder.card = {};
+    if(!!cardItem._id)
+    {
+        $scope.holder.card = cardItem;
+        if(!!$scope.holder.card.date)
+            $scope.holder.card.date = new Date(cardItem.date);
+        if(!!$scope.holder.card.expiresOn)
+            $scope.holder.card.expiresOn = new Date(cardItem.expiresOn);
+        if(cardItem.description === undefined)
+            cardItem.description = "";
+        else
+            $scope.descriptionDisplay = $sce.trustAsHtml(descrip);
+    }
+    $scope.holder.image = {};
+    $scope.is = {};
+    $scope.is.featuredInstrument = false;
+    $scope.pages = pages;
     $scope.editingDescription = false;
     $scope.isFeaturedInstrument = false;
     $scope.$watch('uploadedImages', function(newVal){
@@ -101,13 +111,8 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
         return deferred.promise;
 
     };
-    $scope.$watch('holder.card.date', function(newVal)
-    {
-
-    });
 
     $scope.holder.card.includeOnHome = false;
-    $scope.holder.card.page = $scope.pages[1];
     $scope.toggleFeatureInstrument = function(){
         $scope.featureInstrument = !$scope.featureInstrument;
     };

@@ -1,7 +1,7 @@
 
-    <div layout="column">
-        <md-card flex-xs flex-lt-md="100" flex="100">
-            <span layout="row" layout-align="center" class="md-headline">{{item.name}}</span>
+    <div layout="column" >
+        <md-card flex-xs flex-lt-md="100" flex="100" layout-padding>
+            <div layout="row" layout-align="center" class="md-headline">{{item.name | titleCase}}</div>
             <md-card-content layout="column">
                 <div layout-gt-md="row" layout="column">
                     <div layout="row" layout-align="center" style="margin-bottom: 100px " flex-gt-md="50" flex="50" layout-padding>
@@ -17,7 +17,7 @@
                         {{description}}
                     </p>
                 </div>
-                <span class="price" layout-margin flex>{{item.price | currency}}</span>
+                <div class="price" layout-margin flex>{{item.price | currency}}</div>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button ng-click="goInventory()">
@@ -28,7 +28,7 @@
                 </md-button>
             </md-card-actions>
         </md-card>
-        <md-card layout-align="center" ng-if="!!item.videoId" style="height:700px;">
+        <md-card layout-align="center" style="height:500px;" ng-if="!!item.videoUrl">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{item.name}} - Video</span>
@@ -36,11 +36,11 @@
             </md-card-title>
             <md-card-content flex layout-align="center" >
                 <iframe width="420" height="315"
-                        ng-src="{{item.url}}">
+                        ng-src="{{item.videoUrl}}">
                 </iframe>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button href="https://www.youtube.com/channel/UCCbmErrdxj5DyunZkBurAFQ">View YouTube Page</md-button>
+                <md-button href="https://www.youtube.com/channel/UCCbmErrdxj5DyunZkBurAFQ">YouTube Channel</md-button>
             </md-card-actions>
         </md-card>
     </div>

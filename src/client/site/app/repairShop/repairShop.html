@@ -2,46 +2,56 @@
     <md-card-title layout="row">
         <div layout-align="start center" flex="50" layout="row">
             <div class="md-headline">{{page.header}}</div>
+            <div class="md-headline" ng-show="!!page.name">Featured Item -- {{page.name}}</div>
         </div>
         <div layout-align="end center" flex="50" layout="row">
-            <div class="md-subheader" ng-show="page.page=='instrument'">{{page.price | currency}}</div>
-            <div class="md-subheader" ng-show="!!page.date">{{page.date | date:"MMM dd 'at' h:mma"}}</div>
+            <div class="md-subheader" ng-show="!!page.price">{{page.price | currency}}</div>
+            <div class="md-subheader">
+                <span ng-show="!!page.date">{{page.date | date:"MMM dd"}} </span>
+                <span ng-show="!!page.time">at {{page.time}}</span>
+            </div>
             <div class="md-subheader" ng-show="!!page.startDate">{{page.startDate}}</div>
         </div>
     </md-card-title>
     <div layout-gt-md="row" layout="column" layout-padding>
         <div ng-show="$odd || !$mdMedia('gt-md')" layout-align="start" layout="row" flex-gt-md="30" flex >
-            <div layout-padding ng-show="page.page == 'card' && !!page.img">
-                <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
-            </div>
-            <md-card-title-media ng-show="page.type !== 'card' && !!page.img">
+            <md-card-title-media ng-show="!!page.videoId">
+                <iframe width="420" height="315"
+                        ng-src="{{page.video_url}}">
+                </iframe>
+            </md-card-title-media>
+            <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="{{page.img}}" />
+                    <img ng-show="!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png"/>
+                    <img ng-show="!!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page.inventory_id}}/{{primary_image}}.png"/>
                 </div>
             </md-card-title-media>
         </div>
         <div layout="row" flex-gt-md="70" flex>
             <div layout="column" >
-                <md-card-content >
+                <md-card-content>
                     <p class="md-subheader-content" data-ng-bind-html="page.description">
                         {{page.description}}
                     </p>
                 </md-card-content>
             </div>
         </div>
-        <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="30" flex >
-            <div layout-padding ng-show="page.type == 'card' && !!page.img">
-                <img ng-src="configuration/home/img/{{page.img}}" />
-            </div>
-            <md-card-title-media ng-show="page.type !== 'card' && !!page.img">
+        <div ng-show="$even && $mdMedia('gt-md')" layout-align="end" layout="row" flex-gt-md="40" flex >
+            <md-card-title-media ng-show="!!page.videoId">
+                <iframe width="420" height="315"
+                        ng-src="{{page.video_url}}">
+                </iframe>
+            </md-card-title-media>
+            <md-card-title-media ng-show="!!page.images && !page.videoId">
                 <div layout-padding class="md-media-md card-media" >
-                    <img ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png" ng-show="!imgLoad"/>
+                    <img ng-show="!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page._id}}/{{page.images[0]}}.png"/>
+                    <img ng-show="!!page.inventory_id" ng-src="http://www.franzkedesigner.com/img/inventory/{{page.inventory_id}}/{{primary_image}}.png"/>
                 </div>
             </md-card-title-media>
         </div>
     </div>
-    <md-card-actions layout="row" layout-align="end center" ng-show="!!page.action">
-        <md-button href="{{page.action}}">View</md-button>
+    <md-card-actions layout="row" layout-align="end center" ng-show="!!page.inventory_id">
+        <md-button href="#!/inventory/{{page.inventory_id}}">View</md-button>
     </md-card-actions>
     <md-card-actions layout="row" layout-align="end center" ng-show="!!page.url">
         <md-button href="{{page.url}}">View</md-button>

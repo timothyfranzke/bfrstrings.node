@@ -1,10 +1,10 @@
     <md-grid-list
-            md-cols="4" md-cols-sm="4" md-cols-md="8" md-cols-gt-md="12"
+            md-cols="6" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="12"
             md-row-height="8:6"
-            md-gutter="2px" md-gutter-gt-sm="1px">
+            md-gutter="4px" md-gutter-gt-sm="4px">
         <md-grid-tile ng-repeat="item in items"
                       md-rowspan="3"
-                      md-colspan="4"
+                      md-colspan="6"
                       ng-if="item.visible"
                       layout="row"
                       layout-align="start center"
@@ -13,13 +13,12 @@
             <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch flex>
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">{{item.name}}</span>
+                        <span class="md-headline">{{item.name | titleCase}}</span>
                         <span class="md-subhead">{{item.price | currency}}</span>
                     </md-card-title-text>
                     <md-card-title-media>
                         <div class="md-media-md card-media" flex>
-                            <img ng-src="http://www.franzkedesigner.com/img/inventory/{{item._id}}/thumbs/{{item.primary_image}}.png" ng-show="!imgLoad" flex/>
-                            <md-progress-circular ng-show="imgLoad" class="md-accent" md-diameter="40"></md-progress-circular>
+                            <img ng-src="http://www.franzkedesigner.com/img/inventory/{{item._id}}/thumbs/{{item.primary_image}}.png" flex/>
                         </div>
                     </md-card-title-media>
                 </md-card-title>
