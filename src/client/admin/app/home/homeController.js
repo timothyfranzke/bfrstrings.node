@@ -1,4 +1,4 @@
-bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, $mdDialog, baseService, inventoryService, cardService){
+bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, $mdDialog, baseService, inventoryService, loadingService, cardService){
     var url = '/api/cards';
     var imageUrl = "http://www.franzkedesigner.com/bfstrings_images/CreateImageService.php";
     $scope.config = {};
@@ -37,7 +37,8 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
         });
     };
     $scope.editCard = function(item, index){
-        console.log(item);
+        console.log(index);
+        console.log($scope.items);
         if(!!item.expiresOn)
             item.expiresOn = new Date(item.expiresOn);
 
@@ -48,7 +49,7 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
-            $scope.isLoading = true;
+            loadingService.setLoader(true);
             if (data.description !== undefined)
             {
                 if(typeof data.description !== "string")
@@ -57,6 +58,8 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
                 }
             }
             baseService.PUT(url, data.card._id, data.card).then(function(res){
+                console.log(res);
+                var i = 1;
                 data.images.forEach(function(image){
                     var imageData = image.base64;
                     imageData.id = data.card._id;
@@ -66,11 +69,11 @@ bfAppAdmin.controller('homeController', function($scope, $http, $sce, $mdMedia, 
                         console.log("added: " + res);
                     });
                 });
-                $scope.items[index] = res.data.value;
+                $scope.cards[index] = res.data.value;
             })
         }, function(err)
         {
             console.log(err);
-        }).finally(function(){$scope.isLoading = false;})
+        }).finally(loadingService.setLoader(false))
     };
 });

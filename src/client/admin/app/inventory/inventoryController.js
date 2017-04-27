@@ -1,4 +1,4 @@
-bfAppAdmin.controller('inventoryController', function($scope, inventoryService, instrumentService, inventoryModel, baseService,  $stateParams, $timeout, $state, $mdDialog, $mdSidenav, $mdMedia){
+bfAppAdmin.controller('inventoryController', function($scope, inventoryService, instrumentService, loadingService, inventoryModel, baseService,  $stateParams, $timeout, $state, $mdDialog, $mdSidenav, $mdMedia){
     $scope.isHome = true;
     $scope.isSmallScreen = $mdMedia('gt-md');
     $scope.selectedInventory = "";
@@ -78,7 +78,7 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
-            $scope.isLoading = true;
+            loadingService.setLoader(true);
             var image_array = [];
             var max_image_id = 1;
             data.item.added_images = data.images.length;
@@ -90,23 +90,21 @@ bfAppAdmin.controller('inventoryController', function($scope, inventoryService, 
             data.images.forEach(function(image){
                 image_array.push(max_image_id);
                 max_image_id ++;
-                console.log("max id: " + max_image_id);
             });
             data.item.images = data.item.images.concat(image_array);
-            console.log("concat array: " + data.item.images);
-            baseService.PUT(url, data.item._id, data.item).then(function(res){
-                var i = image_array[0];
-                data.images.forEach(function(image){
-                    var imageData = image.base64;
-                    imageData.id = data.item._id;
-                    imageData.imageId = i;
-                    i++;
-                    baseService.POST(imageUrl, imageData).then(function(res){
-                        console.log("added: " + res);
-                    });
-                });
-                $scope.items[index] = res.data.value;
-            })
+                baseService.PUT(url, data.item._id, data.item).then(function(res){
+                    var i = image_array[0];
+                    data.images.forEach(function(image){
+                        var imageData = image.base64;
+                        imageData.id = data.item._id;
+                        imageData.imageId = i;
+                        i++;
+                        baseService.POST(imageUrl, imageData).then(function(res){
+                            console.log("added: " + res);
+                        });
+                    }).finally(loadingService.setLoader(false));
+                    $scope.items[index] = res.data.value;
+                }).finally(loadingService.setLoader(false));
         }, function(err)
         {
             console.log(err);

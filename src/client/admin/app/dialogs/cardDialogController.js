@@ -31,7 +31,12 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
         if(cardItem.description === undefined)
             cardItem.description = "";
         else
-            $scope.descriptionDisplay = $sce.trustAsHtml(descrip);
+        {
+            $scope.descriptionDisplay = cardItem.description.toString();
+            $scope.descrip = cardItem.description.toString();
+            cardItem.description = cardItem.description.toString();
+        }
+
     }
     $scope.holder.image = {};
     $scope.is = {};
@@ -43,38 +48,28 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
         if(newVal !== undefined){
             if($scope.holder.images.length > 0)
             {
-                console.log("images is geting added!");
                 $scope.holder.images.concat(newVal);
             }
             else
             {
-
                 $scope.holder.images = newVal;
             }
-            console.log( newVal);
         }
         else{
             $scope.holder.images = [];
         }
     });
     $scope.resizeImage = function ( file ) {
-
         var images = {};
-
         var deferred = $q.defer();
-
         var img = document.createElement("img");
         var reader = new FileReader();
         var i = new Image();
         reader.onload = function(e) {
-            // resize the picture
-
-
             i.src = e.target.result;
 
         };
         i.onload = function(){
-            console.log(img);
             var canvas = document.createElement("canvas");
 
             var MAX_WIDTH = 500;
@@ -98,9 +93,6 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
             canvas.height = height;
             var ctx = canvas.getContext("2d");
             ctx.drawImage(i, 0, 0, width, height);
-
-            console.log("width" + width + " " + "height" + height);
-            console.log(canvas);
             images.base64 = {};
             images.base64.full = i.src;
 
@@ -126,6 +118,7 @@ bfAppAdmin.controller('cardDialogController', function(cardItem, $scope, $mdDial
     };
 
     $scope.submit = function(holder){
+        console.log(holder);
         $mdDialog.hide(holder);
     };
 

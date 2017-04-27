@@ -1,4 +1,4 @@
-bfApp.controller('navigationController', function($scope, $state, $mdSidenav, $timeout, inventoryService, instrumentService, inventoryModel){
+bfApp.controller('navigationController', function($scope, $state, $mdSidenav, $mdDialog, $timeout, inventoryService, instrumentService, inventoryModel){
     $scope.showInventory = true;
     function debounce(func, wait, context) {
         var timer;
@@ -154,10 +154,25 @@ bfApp.controller('navigationController', function($scope, $state, $mdSidenav, $t
                 break;
         }
     };
-    $scope.goRepairShop = function(){
-        $state.go("repairShop");
-    };
-    $scope.goRepairShop = function(){
-        $state.go("ourBrand");
+    $scope.openInquire = function(item){
+        $mdDialog.show({
+            locals:{item:{}},
+            controller: 'contactController',
+            templateUrl: 'app/contact/contact.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true,
+            fullscreen: true
+        }).then(function(contact){
+            var request = {
+                url: 'api/contact',
+                method: 'POST',
+                data: contact
+            };
+
+            $http(request)
+                .then(function (data) {
+                    showToast("Your inquiry has been sent.  Thank you!")
+                })
+        })
     };
 });

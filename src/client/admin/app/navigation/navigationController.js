@@ -4,6 +4,12 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
     var imageUrl = "http://www.franzkedesigner.com/bfstrings_images/CreateImageService.php";
     $scope.isLoading = false;
     $scope.showInventory = true;
+    var changeLoader = function(isLoading){
+        console.log(isLoading);
+        $scope.isLoading = isLoading;
+    };
+    loadingService.setLoadObserver(changeLoader);
+
     function debounce(func, wait, context) {
         var timer;
         return function debounced() {
@@ -223,7 +229,7 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
             clickOutsideToClose: true,
             fullscreen : true
         }).then(function(data){
-            $scope.isLoading = true;
+            loadingService.setLoader(true);
             var numberOfImages = data.images.length;
             data.item.number_of_images = numberOfImages;
             baseService.POST(inventoryUrl, data.item).then(function(res){
@@ -257,7 +263,7 @@ bfAppAdmin.controller('navigationController', function($scope, $state, $mdSidena
         {
             $scope.isLoading = false;
             console.log(err);
-        })
+        }).finally(loadingService.setLoader(false))
     };
 
 });

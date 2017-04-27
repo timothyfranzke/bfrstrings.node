@@ -4,8 +4,7 @@
 bfApp.controller('contactController', function($scope, $http, inventoryService, $mdDialog, item) {
         $scope.items = {};
         $scope.itemsHolder = {};
-        $scope.contact = {
-        };
+        $scope.contact = {};
         $scope.contact.item = item;
         $scope.item = item;
         $scope.inquiredItem = inventoryService.getInquiredItem();
@@ -44,6 +43,6 @@ bfApp.controller('contactController', function($scope, $http, inventoryService, 
         };
         $scope.cancel = function(){
             $mdDialog.cancel();
-        }
+        };
     }
 );
